@@ -1,6 +1,10 @@
+'use client'
 import styles from "./home.module.scss";
 import React from 'react'
 import Image from "next/image";
+import ReactECharts from 'echarts-for-react';
+import Echart from "./echart/page";
+import { options } from './echart/page'
 function page() {
   return (
     <>
@@ -11,10 +15,21 @@ function page() {
         </p>
       </div>
       <div className="flex flex-col items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-9">
-        <p className={`${styles.article} mt-8 mx-8 sm:ml-10 sm:w-[50vw] sm:mt-20 sm:max-w-[700px]`}>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        {/* <Image
+          src="/aboutme.png"
+          width={280}
+          height={280}
+          alt="Picture of the author"
+          className="sm:mt-20 ml-0 sm:ml-10 mt-8"
+        /> */}
+        <p className={`${styles.subHeader} sm:mt-20 ml-18 sm:ml-20 mt-8`}>about me</p>
+        <p className={`${styles.article} ml-12 mt-8 mx-8 sm:ml-8 sm:w-[50vw] sm:mt-20 sm:max-w-[700px]`}>
+          Hello world! My name is Kaiyi<br />
+          Used to be a student in English Literature<br />
+          Now I'm a passionate web developer and designer, dedicated to crafting seamless, user-friendly applications that blend functionality with aesthetic appeal.<br />
+          I'm always curious and open to new ideas, seeking opportunities to collaborate with others, share knowledge, and explore innovative approaches. My goal is to not only improve my own skills but also contribute to a community of like-minded individuals.<br />
+          Let's connect and create something impactful together!
         </p>
-
         <Image
           src="/kaiyi.png"
           width={400}
@@ -22,6 +37,33 @@ function page() {
           alt="Picture of the author"
           className="w-[80%] sm:w-auto mt-8 sm:mr-[7%] xl:mr-[15%]"
         />
+      </div >
+      <div className="flex justify-center ">
+        <Image
+          src="/arrow.png"
+          width={320}
+          height={320}
+          alt="arrow"
+          className="my-0 hidden md:inline-block sm:mt-8"
+        />
+      </div>
+      <div className="flex flex-col-reverse items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-0">
+        <ReactECharts className="flex-none basis-4/12 sm:w-auto mt-2 sm:ml-2 xl:ml-8" option={options} />
+        {/* <Image
+          src="/kaiyi.png"
+          width={400}
+          height={400}
+          alt="Picture of the author"
+          className="w-[80%] sm:w-auto mt-2 sm:ml-10 xl:ml-12"
+        /> */}
+        <ul className={`${styles.article} mt-8 mx-8 sm:ml-18 ml-12 sm:w-[50vw] sm:mt-10 sm:max-w-[700px]`}>
+          <li><b>Languages: </b> JavaScript, TypeScript, HTML, CSS, Python, C#</li>
+          <li><b>Frameworks & Libraries: </b> React, Next.js, Blazor, Tailwind CSS</li>
+          <li><b>Databases: </b> MySQL, Prisma</li>
+          <li><b>Tools & Platforms: </b> Figma, Git, Jest, Mocha, Vercel</li>
+          <li><b>Others: </b> REST APIs, Responsive Design, Graphic Design</li>
+        </ul>
+        <p className={`${styles.subHeader} sm:mt-12 sm:mr-[7%] xl:mr-[15%] mt-8`}>Tech</p>
       </div>
     </>
   )

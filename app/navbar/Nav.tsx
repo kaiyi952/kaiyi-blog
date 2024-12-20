@@ -63,7 +63,6 @@ function Nav() {
   function handleAnimatedImageClick() {
     console.log("click");
     if (!animeController.current) {
-      console.log("WTF?");
       return;
     }
     console.log(animeController.current.direction);
