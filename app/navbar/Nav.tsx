@@ -38,7 +38,7 @@ function Nav() {
     animeController.current = anime({
       targets: currentLeft.current,
       autoplay: false,
-      easing: "linear",
+      easing: "easeInOutSine",
       value: 1,
       direction: "alternate",
       update(anim) {
