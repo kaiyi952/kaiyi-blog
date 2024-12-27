@@ -8,8 +8,12 @@ import { options } from './echart/page'
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 import { useEffect } from "react";
-import SideNav from "./navbar/SideNav";
+import SideNav from "./components/navbar/SideNav";
 import { Link } from "react-scroll";
+import { FaInstagram, FaGithub, FaLinkedin, FaFacebook, FaEnvelope } from 'react-icons/fa6';
+import { Button } from "react-scroll";
+
+
 
 
 function page() {
@@ -26,7 +30,7 @@ function page() {
       // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
       offset: 120, // offset (in px) from the original trigger point
       delay: 0, // values from 0 to 3000, with step 50ms
-      duration: 800, // values from 0 to 3000, with step 50ms
+      duration: 600, // values from 0 to 3000, with step 50ms
       easing: 'ease', // default easing for AOS animations
       once: false, // whether animation should happen only once - while scrolling down
       mirror: false, // whether elements should animate out while scrolling past them
@@ -49,7 +53,27 @@ function page() {
           Now I'm a passionate web developer and designer, dedicated to crafting seamless, user-friendly applications that blend functionality with aesthetic appeal.<br />
           I'm always curious and open to new ideas, seeking opportunities to collaborate with others, share knowledge, and explore innovative approaches. My goal is to not only improve my own skills but also contribute to a community of like-minded individuals.<br />
           Let's connect and create something impactful together!
+          &nbsp;
+          <a href="https://github.com/kaiyi952" >
+            <FaGithub className="inline-block" />
+          </a>
+          &nbsp;
+          <a href="https://www.linkedin.com/in/kaiyi-he/" >
+            <FaLinkedin className="inline-block" />
+          </a>
+          &nbsp;
+          <a href="mailto:irishe952@gmail.com" target="_blank" rel="noopener noreferrer">
+            <FaEnvelope className="inline-block" />
+          </a>
+          &nbsp;
+          <a href="https://www.instagram.com/kaiyi_7/profilecard/?igsh=ZDI4M2J3aW1vdzQ1" >
+            <FaInstagram className="inline-block" />
+          </a>&nbsp;
+          <a href="https://www.facebook.com/share/15YfS8HcXQ/?mibextid=wwXIfr" >
+            <FaFacebook className="inline-block" />
+          </a>
         </p>
+
         <Image
           src="/kaiyi.png"
           width={400}

@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Caveat+Brush&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Caveat+Brush&family=Noto+Sans+Mono:wght@100..900&family=Patrick+Hand&family=Recursive:wght,CASL,MONO@300..1000,0..1,0..1&display=swap');
 
 @tailwind base;
 @tailwind components;

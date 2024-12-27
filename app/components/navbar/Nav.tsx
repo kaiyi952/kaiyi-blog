@@ -6,6 +6,14 @@ import Link from 'next/link';
 import SearchBar from './searchbar';
 import Image from 'next/image';
 import anime, { AnimeInstance } from 'animejs';
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+  SignOutButton
+} from '@clerk/nextjs'
 
 function Nav() {
   const animeController = useRef<AnimeInstance | null>(null);
@@ -85,8 +93,20 @@ function Nav() {
         />
       </div>
       <div>
-        <Link href="/blog" style={{ color: '#2733f5' }} className='mr-4' ref={rightElemRef}>Blog</Link>
-        <Link href="/" className='ml-8 hidden md:inline-block' style={{ color: '#2733f5' }}>Log in</Link>
+        <Link href="/blog" style={{ color: '#2733f5' }} className='mr-6' ref={rightElemRef}>blog</Link>
+        <Link href="/blog" style={{ color: '#2733f5' }} className='mr-6'>friends</Link>
+        <SignedOut>
+          <SignInButton mode='modal' >
+            <button className='hidden md:inline-block' style={{ color: '#2733f5' }}>Log in</button>
+          </SignInButton>
+        </SignedOut>
+        <SignedIn>
+          <SignOutButton redirectUrl='/'>
+            <button className='hidden md:inline-block' style={{ color: '#2733f5' }}>
+              Log out
+            </button>
+          </SignOutButton>
+        </SignedIn>
       </div>
 
     </div>

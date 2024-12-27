@@ -7,9 +7,12 @@
 }
 
 .article {
-  font-family: "Caveat Brush", serif;
-  font-size: 24px;
-  font-weight: 400;
+  // font-family: "Caveat Brush", serif;
+  font-family: "Recursive", serif;
+  //  font-family: "Noto Sans Mono", serif;
+  font-variation-settings: "CASL" 0,"MONO" .8;
+  font-size: 18px;
+  font-weight: 550;
   font-style: normal;
   color: #2733f5;
   line-height: 1.5em;
