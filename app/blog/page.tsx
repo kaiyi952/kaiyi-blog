@@ -7,7 +7,7 @@ import { SignedIn } from '@clerk/nextjs';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 import { useEffect } from "react";
-import BlogList from '../components/List/BlogList';
+import ArticleCard from '../components/cards/ArticleCard';
 
 function page() {
     useEffect(() => {
@@ -47,10 +47,10 @@ function page() {
                         <button className={`${styles.articleHover} ml-8  md:inline-block`} style={{ color: '#2733f5' }}>Book Review</button>
                         <button className={`${styles.articleHover} ml-8  md:inline-block`} style={{ color: '#2733f5' }}>Journal</button>
                         <SignedIn>
-                            <Link href="/createblog" className={`${styles.articleHover} ml-8  md:inline-block`} style={{ color: '#2733f5' }}>add</Link>
+                            <Link href="/createblog" className={`${styles.articleHover} ml-8  md:inline-block`} style={{ color: '#2733f5' }}>Add</Link>
                         </SignedIn>
                     </div>
-                    <div className={`mt-0 mx-8  sm:w-[50vw] sm:mt-6 sm:max-w-[700px]`}><BlogList /></div>
+                    <div className={`mt-0 mx-8  sm:w-[50vw] sm:mt-6 sm:max-w-[700px]`}><ArticleCard /></div>
 
                 </div>
 

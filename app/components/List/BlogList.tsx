@@ -3,7 +3,6 @@ import RemoveBtn from '../buttons/RemoveBtn'
 import styles from "./blog-list.module.scss"
 import Link from 'next/link'
 import { BiPencil } from 'react-icons/bi'
-import { color } from 'echarts'
 
 const BlogList: FC = () => {
   return (<>
