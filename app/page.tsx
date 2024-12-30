@@ -3,15 +3,13 @@ import styles from "./home.module.scss";
 import React from 'react'
 import Image from "next/image";
 import ReactECharts from 'echarts-for-react';
-import Echart from "./echart/page";
 import { options } from './echart/page'
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 import { useEffect } from "react";
 import SideNav from "./components/navbar/SideNav";
-import { Link } from "react-scroll";
 import { FaInstagram, FaGithub, FaLinkedin, FaFacebook, FaEnvelope } from 'react-icons/fa6';
-import { Button } from "react-scroll";
+
 
 
 

@@ -1,0 +1,31 @@
+.handWritten {
+  font-family: "Caveat Brush", serif;
+  font-weight: 800;
+  font-size: 40;
+  font-style: normal;
+   color: #2733f5;
+}
+
+.label {
+  font-family: "Caveat Brush", serif;
+  font-weight: 800;
+  font-size: 30;
+  font-style: normal;
+   color: #2733f5;
+}
+
+.editor {
+background-color: white;
+font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box; /* 防止宽度问题 */
+  height: 200px;
+  overflow-y: scroll;
+}
+
+.editor:focus {
+    border: 1px solid #2733f5 ;
+}
