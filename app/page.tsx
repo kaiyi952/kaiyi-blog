@@ -1,40 +1,11 @@
-'use client'
 import styles from "./home.module.scss";
 import React from 'react'
 import Image from "next/image";
-import ReactECharts from 'echarts-for-react';
-import { options } from './echart/page'
-import AOS from 'aos';
-import 'aos/dist/aos.css'
-import { useEffect } from "react";
+import EChart from './echart/page'
 import SideNav from "./components/navbar/SideNav";
 import { FaInstagram, FaGithub, FaLinkedin, FaFacebook, FaEnvelope } from 'react-icons/fa6';
 
-
-
-
-
-function page() {
-  useEffect(() => {
-    AOS.init({
-      disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-      startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
-      initClassName: 'aos-init', // class applied after initialization
-      animatedClassName: 'aos-animate', // class applied on animation
-      useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-      disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-      debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-      throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-      // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-      offset: 120, // offset (in px) from the original trigger point
-      delay: 0, // values from 0 to 3000, with step 50ms
-      duration: 600, // values from 0 to 3000, with step 50ms
-      easing: 'ease', // default easing for AOS animations
-      once: false, // whether animation should happen only once - while scrolling down
-      mirror: false, // whether elements should animate out while scrolling past them
-      anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
-    });
-  }, []);
+function Page() {
   return (
     <>
       <div id="section1" className="inline-block">
@@ -91,7 +62,7 @@ function page() {
         />
       </div>
       <div id='section3' className="flex flex-col-reverse items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-0" data-aos="fade-up">
-        <ReactECharts className="flex-none sm:ml-0 basis-4/12 sm:w-auto mt-2  xl:ml-8" option={options} />
+        <EChart />
         {/* <Image
           src="/kaiyi.png"
           width={400}
@@ -143,7 +114,7 @@ function page() {
           Conducted smoke tests to ensure functionality under diverse scenarios.
         </section>
       </div >
-      <div id='section5' className=" flex flex-col-reverse items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-10" data-aos="fade-up">
+      <div id='section5' className=" flex flex-col-reverse items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-10 sm:mb-10 mb-10" data-aos="fade-up">
         <ul className={`${styles.article} sm:ml-[200px] mt-8 mx-8 sm:ml-18 ml-12 sm:w-[50vw] sm:mt-8 sm:max-w-[700px]`}>
           <li><b>Languages: </b> JavaScript, TypeScript, HTML, CSS, Python, C#</li>
           <li><b>Frameworks & Libraries: </b> React, Next.js, Blazor, Tailwind CSS</li>
@@ -158,4 +129,4 @@ function page() {
   )
 }
 
-export default page
+export default Page

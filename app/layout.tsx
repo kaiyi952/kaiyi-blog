@@ -10,6 +10,7 @@ import {
   SignedOut,
   UserButton
 } from '@clerk/nextjs'
+import InitAOS from "./components/InitAOS/InitAOS";
 
 
 const geistSans = Geist({
@@ -41,7 +42,7 @@ export default function RootLayout({
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           <Nav />
-
+          <InitAOS />
           {children}
         </body>
       </html>
