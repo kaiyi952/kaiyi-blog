@@ -2,10 +2,11 @@ import React, { FC } from 'react'
 import styles from './blog.module.scss'
 import Link from 'next/link';
 import { SignedIn } from '@clerk/nextjs';
-import ArticleList, { BlogProps } from '../components/cards/ArticleCard';
 import connectMongoDB from '@/libs/mongodb';
 import Blog from '../model/Blog';
 import BlogList from '../components/List/BlogList';
+import ArticleTags from '../components/tags/ArticleTags';
+import Tag from '../model/Tag';
 
 const BlogPage: FC = async () => {
     // let blogs: BlogProps[] = [];
@@ -20,6 +21,7 @@ const BlogPage: FC = async () => {
     // const { blogs } = (await rawData.json());
     await connectMongoDB();
     const blogs = await Blog.find();
+    const tags = await Tag.find();
 
     return (
         <>
@@ -32,10 +34,11 @@ const BlogPage: FC = async () => {
             <div className="flex items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-9" data-aos="zoom-in">
                 <div className='flex flex-col sm:ml-10'>
                     <div className={`${styles.article} mt-8 mx-8 sm:w-[50vw] sm:mt-20 sm:max-w-[700px]`}>
-                        <p className='md:inline-block'><b>tags: </b></p>&nbsp;&nbsp;
-                        <button className={`${styles.articleHover}`} style={{ color: '#2733f5' }}>Developer Blog</button>
+                        <p className='md:inline-block'><b>tags: </b></p>
+                        <ArticleTags tags={tags.map((v) => v.name)} />
+                        {/* <button className={`${styles.articleHover}`} style={{ color: '#2733f5' }}>Developer Blog</button>
                         <button className={`${styles.articleHover} ml-8 md:inline-block`} style={{ color: '#2733f5' }}>Book Review</button>
-                        <button className={`${styles.articleHover} ml-8 md:inline-block`} style={{ color: '#2733f5' }}>Journal</button>
+                        <button className={`${styles.articleHover} ml-8 md:inline-block`} style={{ color: '#2733f5' }}>Journal</button> */}
                         <SignedIn>
                             <Link href="/createblog" className={`${styles.articleHover} ml-8 md:inline-block`} style={{ color: '#2733f5' }}>Add</Link>
                         </SignedIn>

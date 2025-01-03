@@ -2,13 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "./components/navbar/Nav";
-import SideNav from "./components/navbar/SideNav";
 import {
   ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton
 } from '@clerk/nextjs'
 import InitAOS from "./components/InitAOS/InitAOS";
 
