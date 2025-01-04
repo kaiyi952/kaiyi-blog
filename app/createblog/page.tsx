@@ -1,13 +1,20 @@
-'use client'
-import React from 'react'
+"use client";
+
+import React, { useEffect, useState } from 'react'
 import styles from "./createBlog.module.scss"
-import dynamic from "next/dynamic";
-
-const Editor = dynamic(() => import("./Editor"), { ssr: false });
-
-
+import TagControler from '../components/tagcontroler/TagControler';
+import Editor from './Editor';
 
 function CreateBlog() {
+  const [tags, setTags] = useState<string[]>([]);
+  useEffect(() => {
+    fetch("/api/tags")
+      .then((v) => v.json())
+      .then((data) => {
+        setTags(data.tags as string[]);
+      });
+  }, []);
+
   return (
     <div className={`flex flex-col items-center min-h-screen bg-white py-8`}>
       <div className="bg-gray-100 p-8 rounded shadow-md w-full max-w-[80%]">
@@ -38,6 +45,13 @@ function CreateBlog() {
               className="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               placeholder="Short description"
             />
+          </div>
+
+          <div className='w-full z-50'>
+            <label htmlFor="article" className={`block  font-medium mb-2 ${styles.label}`}>
+              Tags
+            </label>
+            <TagControler tags={tags} />
           </div>
           {/* Article input */}
 

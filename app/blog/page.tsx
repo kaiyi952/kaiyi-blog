@@ -6,7 +6,7 @@ import connectMongoDB from '@/libs/mongodb';
 import Blog from '../model/Blog';
 import BlogList from '../components/List/BlogList';
 import ArticleTags from '../components/tags/ArticleTags';
-import Tag from '../model/Tag';
+import BlogTag from '../model/BlogTag';
 
 const BlogPage: FC = async () => {
     // let blogs: BlogProps[] = [];
@@ -21,7 +21,7 @@ const BlogPage: FC = async () => {
     // const { blogs } = (await rawData.json());
     await connectMongoDB();
     const blogs = await Blog.find();
-    const tags = await Tag.find();
+    const tags = await BlogTag.find();
 
     return (
         <>

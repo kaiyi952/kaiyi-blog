@@ -1,5 +1,5 @@
 import Blog from "@/app/model/Blog";
-import Tag from "@/app/model/Tag";
+import BlogTag from "@/app/model/BlogTag";
 import connectMongoDB from "@/libs/mongodb";
 import { NextResponse, NextRequest } from "next/server";
 
@@ -14,8 +14,8 @@ export async function POST(req: NextRequest) {
     const { title, content, description, tags } = (await req.json()) as CreatePostRequest;
     await connectMongoDB();
     await Blog.create({ title, content, description, tags });
-    const existedTags = (await Tag.find({ name: { $in: tags } })).map((v) => v.name);
-    await Tag.insertMany(
+    const existedTags = (await BlogTag.find({ name: { $in: tags } })).map((v) => v.name);
+    await BlogTag.insertMany(
         tags
             .filter((v) => !existedTags.includes(v))
             .map((v) => ({ name: v }))
