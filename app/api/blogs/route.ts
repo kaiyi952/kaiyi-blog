@@ -30,3 +30,28 @@ export async function GET() {
     return NextResponse.json({ blogs })
 }
 
+export default async function handler(req: NextRequest) {
+
+    if (req.method === "GET") {
+        const searchParams = req.nextUrl.searchParams;
+        const tags = searchParams.get("tags");
+
+        try {
+            await connectMongoDB();
+
+            if (!tags) {
+                const blogs = await Blog.find()
+                return NextResponse.json({ blogs })
+            }
+            const tagList = tags.split(",");
+            const blogs = await Blog.find({ tags: { $in: tagList } });
+            return NextResponse.json({ blogs })
+        } catch (error) {
+            console.error("Error fetching blogs:", error);
+            return NextResponse.json({ message: "Internal Server Error" }, { status: 500 });
+        }
+    };
+
+
+};
+
