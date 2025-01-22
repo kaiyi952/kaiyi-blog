@@ -19,11 +19,14 @@ const PlainTextCodeEditorDescriptor: CodeBlockEditorDescriptor = {
     }
 }
 
-const Editor = () => {
+const Editor = ({
+    onChange, value
+}: { onChange: (md: string) => void, value: string }) => {
     return <MDXEditor
         contentEditableClassName={`${styles.editor}`}
-        onChange={console.log}
-        markdown={'Hello world!'}
+        onChange={onChange
+        }
+        markdown={value}
         plugins={[
             codeBlockPlugin({ codeBlockEditorDescriptors: [PlainTextCodeEditorDescriptor] }),
             headingsPlugin(),

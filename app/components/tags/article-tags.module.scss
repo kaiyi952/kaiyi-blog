@@ -11,7 +11,7 @@
 }
 
 
-.articleHover {
+.article {
   // font-family: "Caveat Brush", serif;
   font-family: "Recursive", serif;
   //  font-family: "Noto Sans Mono", serif;
@@ -23,7 +23,7 @@
   line-height: 1.5em;
 }
 
-.articleHover:hover {
+.article:hover{
   font-family: "Recursive", serif;
    font-variation-settings: "CASL" 1,"MONO" .5;
   font-size: 18px;
@@ -32,4 +32,15 @@
   color: #2733f5;
   line-height: 1.5em;
   transform: scale(1.1); 
+}
+
+.articleActive {
+   font-family: "Recursive", serif;
+   font-variation-settings: "CASL" 1,"MONO" .5;
+  font-size: 18px;
+  font-weight: 800;
+  font-style: normal;
+  color: #2733f5;
+  line-height: 1.5em;
+
 }

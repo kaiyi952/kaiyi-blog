@@ -3,7 +3,7 @@ import React from 'react'
 import Image from "next/image";
 import EChart from './echart/page'
 import SideNav from "./components/navbar/SideNav";
-import { FaInstagram, FaGithub, FaLinkedin, FaFacebook, FaEnvelope } from 'react-icons/fa6';
+import { FaInstagram, FaGithub, FaFacebook, FaEnvelope } from 'react-icons/fa6';
 
 function Page() {
   return (
@@ -25,10 +25,6 @@ function Page() {
           &nbsp;
           <a href="https://github.com/kaiyi952" >
             <FaGithub className="inline-block" />
-          </a>
-          &nbsp;
-          <a href="https://www.linkedin.com/in/kaiyi-he/" >
-            <FaLinkedin className="inline-block" />
           </a>
           &nbsp;
           <a href="mailto:irishe952@gmail.com" target="_blank" rel="noopener noreferrer">

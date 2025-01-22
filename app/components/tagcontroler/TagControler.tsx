@@ -189,14 +189,14 @@ const TagController: React.FC<TagControlerProps> = ({ tags, onChange }) => {
 
     return (
         <Root>
-            <div {...getRootProps()}>
+            <div {...getRootProps()} >
                 <Label {...getInputLabelProps()}></Label>
-                <InputWrapper ref={setAnchorEl} className={focused ? 'focused' : ''}>
+                <InputWrapper ref={setAnchorEl} className={`w-[30%] border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none ${focused ? 'focused' : ''}`}>
                     {value.map((option, index) => {
                         const { key, ...tagProps } = getTagProps({ index });
                         return <StyledTag key={key} {...tagProps} label={option} />;
                     })}
-                    <input {...getInputProps()} />
+                    <input {...getInputProps()} className={`w-[30%] border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none `} />
                 </InputWrapper>
             </div>
             {groupedOptions.length > 0 ? (

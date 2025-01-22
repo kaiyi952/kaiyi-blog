@@ -9,3 +9,5 @@ export async function GET() {
         tags: tags.map((v) => v.name),
     });
 }
+
+

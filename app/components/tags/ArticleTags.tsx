@@ -4,10 +4,12 @@ import styles from './article-tags.module.scss';
 
 interface ArticleTagsProps {
     tags: string[] | undefined;
+    activTag: string;
+    handleTag: () => void;
 }
 
 
-const ArticleTags: FC<ArticleTagsProps> = ({ tags }) => {
+const ArticleTags: FC<ArticleTagsProps> = ({ activeTag, handleTag, tags }) => {
     if (!tags || (Array.isArray(tags) && tags.length === 0)) {
         return null;
     }
@@ -16,7 +18,8 @@ const ArticleTags: FC<ArticleTagsProps> = ({ tags }) => {
             {tags.map((tag) => (
                 <button
                     key={tag}
-                    className={`${styles.articleHover} ml-6 md:inline-block`} style={{ color: '#2733f5' }}
+                    className={`${styles.article} ml-6 md:inline-block ${isActive ? 'active' : ''}`} style={{ color: '#2733f5' }}
+                    onClick={handleTag}
                 >
                     {tag}
                 </button>

@@ -6,17 +6,17 @@ import { BlogEntry } from '../List/BlogList'
 
 
 const ArticleCard: FC<{ blog: BlogEntry }> = (props) => {
-    const { id, title, description, date }: BlogEntry = props.blog;
+    const { id, title, description, createdAt }: BlogEntry = props.blog;
     return (
         <>
-            <Link href={`/article/{id}`} key={id} >
+            <Link href={`/article/${id}`} key={id} >
                 <div className='flex justify-between mb-4'>
                     <div>
                         <h1 className={`${styles.title}`}>{title}</h1>
                         <div className={`${styles.description}`}>{description}</div>
                     </div>
                     <div className='flex items-start gap-2'>
-                        <p className={`${styles.description}`}>{new Date(date).toLocaleDateString()}</p>
+                        <p className={`${styles.description}`}>{new Date(createdAt).toLocaleDateString()}</p>
                         <ArticleActionButtons id={id} />
                     </div>
                 </div>

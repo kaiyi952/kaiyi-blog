@@ -7,7 +7,7 @@ export interface BlogEntry {
   description: string;
   content: string;
   tags: string[];
-  date: string;
+  createdAt: string;
 }
 
 interface ArticleListProps {
