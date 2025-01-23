@@ -15,6 +15,12 @@ export interface BlogDetail {
 }
 
 function EditBlog({ id, title, description, tags, content }: BlogDetail) {
+    const [haveTags, setTags] = useState<string[]>([]);
+    const [newSelectedTags, setSelectedTags] = useState<string[]>(tags);
+    const [newTitle, setTitle] = useState(title)
+    const [newDescription, setDescription] = useState(description)
+    const [newArticle, setArticle] = useState<string>(content);
+    const route = useRouter();
 
     useEffect(() => {
         fetch("/api/tags")
@@ -23,12 +29,8 @@ function EditBlog({ id, title, description, tags, content }: BlogDetail) {
                 setTags(data.tags as string[]);
             });
     }, []);
-    const [haveTags, setTags] = useState<string[]>(tags);
-    const [newTitle, setTitle] = useState(title)
-    const [newDescription, setDescription] = useState(description)
-    const [selectedTags, setSelectedTags] = useState<string[]>([]);
-    const [newArticle, setArticle] = useState<string>(content);
-    const route = useRouter();
+    console.log(newSelectedTags);
+    console.log(newArticle);
 
     const editArticle = async () => {
         try {
@@ -38,10 +40,10 @@ function EditBlog({ id, title, description, tags, content }: BlogDetail) {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    newTitle,
-                    newDescription,
-                    tags: selectedTags,
-                    content: newArticle,
+                    newTitle: newTitle,
+                    newContent: newArticle,
+                    newDescription: newDescription,
+                    newTags: newSelectedTags,
                 }),
             });
 
@@ -90,13 +92,13 @@ function EditBlog({ id, title, description, tags, content }: BlogDetail) {
                             placeholder="Short description"
                         />
                     </div>
-
+                    {/* Tags input */}
                     <div className='w-full z-50'>
                         <label htmlFor="article" className={`block  font-medium mb-2 ${styles.label}`}>
                             Tags
                         </label>
                         <div className='flex'>
-                            <TagControler tags={haveTags} onChange={(selected) => setSelectedTags(selected)} />
+                            <TagControler tags={haveTags} onChange={(selected) => setSelectedTags(selected)} selectedTags={newSelectedTags} />
                         </div>
 
 

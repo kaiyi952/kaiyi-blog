@@ -31,7 +31,6 @@ export async function GET() {
 }
 
 export default async function handler(req: NextRequest) {
-
     if (req.method === "GET") {
         const searchParams = req.nextUrl.searchParams;
         const tags = searchParams.get("tags");

@@ -8,6 +8,8 @@ const Editpage: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => 
     await connectMongoDB();
     const blog = await Blog.findById(id);
     const { title, description, content, tags } = blog
+    console.log(blog);
+    console.log(id);
     return (
         <EditTopicForm id={id} title={title} description={description} content={content} tags={tags} />
     )

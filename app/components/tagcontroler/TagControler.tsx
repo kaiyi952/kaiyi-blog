@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import useAutocomplete, {
-    AutocompleteGetTagProps,
+  AutocompleteGetTagProps,
 } from '@mui/material/useAutocomplete';
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
@@ -10,9 +10,9 @@ import { styled } from '@mui/material/styles';
 import { autocompleteClasses } from '@mui/material/Autocomplete';
 
 const Root = styled('div')(
-    ({ theme }) => `
+  ({ theme }) => `
   color: ${theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.65)' : 'rgba(0,0,0,.85)'
-        };
+    };
   font-size: 14px;
 `,
 );
@@ -24,7 +24,7 @@ const Label = styled('label')`
 `;
 
 const InputWrapper = styled('div')(
-    ({ theme }) => `
+  ({ theme }) => `
   width: 300px;
   border: 1px solid ${theme.palette.mode === 'dark' ? '#434343' : '#d9d9d9'};
   background-color: ${theme.palette.mode === 'dark' ? '#141414' : '#fff'};
@@ -45,7 +45,7 @@ const InputWrapper = styled('div')(
   & input {
     background-color: ${theme.palette.mode === 'dark' ? '#141414' : '#fff'};
     color: ${theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.65)' : 'rgba(0,0,0,.85)'
-        };
+    };
     height: 30px;
     box-sizing: border-box;
     padding: 4px 6px;
@@ -60,28 +60,28 @@ const InputWrapper = styled('div')(
 );
 
 interface TagProps extends ReturnType<AutocompleteGetTagProps> {
-    label: string;
+  label: string;
 }
 
 function Tag(props: TagProps) {
-    const { label, onDelete, ...other } = props;
-    return (
-        <div {...other}>
-            <span>{label}</span>
-            <CloseIcon onClick={onDelete} />
-        </div>
-    );
+  const { label, onDelete, ...other } = props;
+  return (
+    <div {...other}>
+      <span>{label}</span>
+      <CloseIcon onClick={onDelete} />
+    </div>
+  );
 }
 
 const StyledTag = styled(Tag)<TagProps>(
-    ({ theme }) => `
+  ({ theme }) => `
   display: flex;
   align-items: center;
   height: 24px;
   margin: 2px;
   line-height: 22px;
   background-color: ${theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.08)' : '#fafafa'
-        };
+    };
   border: 1px solid ${theme.palette.mode === 'dark' ? '#303030' : '#e8e8e8'};
   border-radius: 2px;
   box-sizing: content-box;
@@ -109,7 +109,7 @@ const StyledTag = styled(Tag)<TagProps>(
 );
 
 const Listbox = styled('ul')(
-    ({ theme }) => `
+  ({ theme }) => `
   width: 300px;
   margin: 2px 0 0;
   padding: 0;
@@ -156,64 +156,69 @@ const Listbox = styled('ul')(
 );
 
 export interface TagControlerProps {
-    tags: string[];
-    onChange?: (selected: string[]) => void;
+  tags: string[];
+  onChange?: (selected: string[]) => void;
+  selectedTags: string[];
 }
 
-const TagController: React.FC<TagControlerProps> = ({ tags, onChange }) => {
-    const [selectedOptions, setSelectedOptions] = React.useState<string[]>([]);
+const TagController: React.FC<TagControlerProps> = ({ tags, onChange, selectedTags }) => {
+  const [selectedOptions, setSelectedOptions] = React.useState<string[]>(selectedTags);
 
-    const {
-        getRootProps,
-        getInputLabelProps,
-        getInputProps,
-        getTagProps,
-        getListboxProps,
-        getOptionProps,
-        groupedOptions,
-        value,
-        focused,
-        setAnchorEl,
-    } = useAutocomplete({
-        id: 'controlled-autocomplete',
-        value: selectedOptions, // 使用受控值
-        onChange: (event, newValue) => {
-            setSelectedOptions(newValue); // 更新受控值
-            onChange?.(newValue);
-        },
-        multiple: true,
-        options: tags,
-        getOptionLabel: (option) => option,
-    });
+  React.useEffect(() => {
+    setSelectedOptions(selectedTags);
+  }, [selectedTags]);
+
+  const {
+    getRootProps,
+    getInputLabelProps,
+    getInputProps,
+    getTagProps,
+    getListboxProps,
+    getOptionProps,
+    groupedOptions,
+    value,
+    focused,
+    setAnchorEl,
+  } = useAutocomplete({
+    id: 'controlled-autocomplete',
+    value: selectedOptions,
+    onChange: (event, newValue) => {
+      setSelectedOptions(newValue);
+      onChange?.(newValue);
+    },
+    multiple: true,
+    options: tags,
+    getOptionLabel: (option) => option,
+  });
 
 
-    return (
-        <Root>
-            <div {...getRootProps()} >
-                <Label {...getInputLabelProps()}></Label>
-                <InputWrapper ref={setAnchorEl} className={`w-[30%] border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none ${focused ? 'focused' : ''}`}>
-                    {value.map((option, index) => {
-                        const { key, ...tagProps } = getTagProps({ index });
-                        return <StyledTag key={key} {...tagProps} label={option} />;
-                    })}
-                    <input {...getInputProps()} className={`w-[30%] border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none `} />
-                </InputWrapper>
-            </div>
-            {groupedOptions.length > 0 ? (
-                <Listbox {...getListboxProps()}>
-                    {groupedOptions.map((option, index) => {
-                        const { key, ...optionProps } = getOptionProps({ option, index });
-                        return (
-                            <li key={key} {...optionProps}>
-                                <span>{option}</span>
-                                <CheckIcon fontSize="small" />
-                            </li>
-                        );
-                    })}
-                </Listbox>
-            ) : null}
-        </Root>
-    );
+  return (
+    <Root>
+      <div {...getRootProps()} >
+        <Label {...getInputLabelProps()}></Label>
+        <InputWrapper ref={setAnchorEl} className={`w-[30%] border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none ${focused ? 'focused' : ''}`}>
+          {value.map((option, index) => {
+            const { key, ...tagProps } = getTagProps({ index });
+            return <StyledTag key={key} {...tagProps} label={option} />;
+          })}
+          <input {...getInputProps()} className={`w-[30%] border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none `} />
+        </InputWrapper>
+      </div>
+      {groupedOptions.length > 0 ? (
+        <Listbox {...getListboxProps()}>
+          {groupedOptions.map((option, index) => {
+            const { key, ...optionProps } = getOptionProps({ option, index });
+            return (
+              <li key={key} {...optionProps}>
+                <span>{option}</span>
+                <CheckIcon fontSize="small" />
+              </li>
+            );
+          })}
+        </Listbox>
+      ) : null}
+    </Root>
+  );
 }
 
 export default TagController;

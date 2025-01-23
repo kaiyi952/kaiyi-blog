@@ -31,8 +31,8 @@ function CreateBlog() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          title,
-          description,
+          title: title,
+          description: description,
           tags: selectedTags,
           content: article,
         }),
@@ -87,7 +87,7 @@ function CreateBlog() {
               Tags
             </label>
             <div className='flex'>
-              <TagControler tags={tags} onChange={(selected) => setSelectedTags(selected)} />
+              <TagControler tags={tags} onChange={(selected) => setSelectedTags(selected)} selectedTags={selectedTags} />
               <input
                 type="text"
                 className="w-[50%] border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none ml-4"

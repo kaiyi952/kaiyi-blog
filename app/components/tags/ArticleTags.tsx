@@ -26,7 +26,6 @@ const ArticleTags: FC<ArticleTagsProps> = ({ activeTag, handleTag, tags }) => {
 
         const queryString = updatedTags.length > 0 ? `?tags=${updatedTags.join(",")}` : "";
 
-        // 更新 URL
         router.push(`${pathname}${queryString}`);
     };
     if (!tags || (Array.isArray(tags) && tags.length === 0)) {
