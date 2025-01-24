@@ -24,14 +24,14 @@
 .description {
     font-family: "Recursive", serif;
   //  font-family: "Noto Sans Mono", serif;
-  font-variation-settings: "CASL" 0,"MONO" .5;
+  font-variation-settings: "CASL" 0,"MONO" .3;
   font-size: 18px;
   font-weight: 500;
   font-style: normal;
   color: #2733f5;
   line-height: 1.5em;
-   white-space: nowrap;      /* 不换行 */
-    overflow: hidden;        /* 隐藏超出部分 */
-    text-overflow: ellipsis; /* 使用省略号显示溢出内容 */
+   white-space: nowrap;     
+    overflow: hidden;       
+    text-overflow: ellipsis; 
 }
 

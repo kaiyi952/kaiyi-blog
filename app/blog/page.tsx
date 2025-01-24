@@ -22,13 +22,15 @@ const BlogPage: FC = async () => {
                 </p>
             </div>
             <div className="flex flex-col items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-9" data-aos="zoom-in">
-                <div className='flex flex-col sm:ml-10'>
+                <div className='flex flex-col sm:ml-10 mx-auto w-[95%]'>
                     <div className={`${styles.article} mt-8 mx-8 sm:w-[50vw] sm:mt-20 sm:max-w-[700px]`}>
-                        <p className='md:inline-block'><b>Tags: </b></p>
-                        <ArticleTags tags={tags.map((v) => v.name)} />
-                        <SignedIn>
-                            <Link href="/createblog" className={`${styles.articleHover} ml-8 md:inline-block`} style={{ color: '#2733f5' }}>Add</Link>
-                        </SignedIn>
+                        <div className='flex'>
+                            <p className='md:inline-block'><b>Tags: </b></p>
+                            <ArticleTags tags={tags.map((v) => v.name)} />
+                            <SignedIn>
+                                <Link href="/createblog" className={`${styles.articleHover} ml-8 md:inline-block`} style={{ color: '#2733f5' }}>Add</Link>
+                            </SignedIn>
+                        </div>
                     </div>
                     <div className="mt-0 mx-8 sm:w-[50vw] sm:mt-6 sm:max-w-[700px]">
                         <BlogList blogs={blogs} />

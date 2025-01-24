@@ -18,7 +18,7 @@ const ArticleCard: FC<{ blog: BlogEntry }> = (props) => {
                             <ArticleActionButtons id={id} />
                         </div>
                     </div>
-                    <div className={`${styles.description} max-w-[700px] `}>{description}</div>
+                    <div className={`${styles.description} sm:max-w-[550px]  w-[360px]`}>{description}</div>
                 </div>
             </Link>
         </>
