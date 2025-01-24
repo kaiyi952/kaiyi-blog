@@ -1,4 +1,8 @@
 
+ .main{
+  height: calc(100vh - 61px);
+ }
+
 .header {
   font-family: "Caveat Brush", serif;
   font-weight: 400;
@@ -6,13 +10,6 @@
   color: #2733f5;
 }
 
-// .article {
-//   font-family: "Caveat Brush", serif;
-//   font-size: 20;
-//   font-weight: 400;
-//   font-style: normal;
-//   color: #2733f5;
-// }
 
 .article {
   // font-family: "Caveat Brush", serif;

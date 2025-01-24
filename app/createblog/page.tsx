@@ -90,12 +90,12 @@ function CreateBlog() {
               <TagControler tags={tags} onChange={(selected) => setSelectedTags(selected)} selectedTags={selectedTags} />
               <input
                 type="text"
-                className="w-[50%] border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none ml-4"
+                className="w-[50%] border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none mx-4"
                 placeholder="Add new tag"
                 value={newTag}
                 onChange={(e) => setNewTag(e.target.value)}
               />
-              <button onClick={() => {
+              <button className={styles.button} onClick={() => {
                 setTags([...tags, newTag]);
                 setNewTag("");
               }}>Add tag</button>
@@ -114,7 +114,7 @@ function CreateBlog() {
           {/* Submit button */}
           <button
             type="submit"
-            className={`w-[200px] bg-gray-100 ${styles.handWritten} font-bold py-2 px-4 rounded hover:bg-blue-600 hover:text-white transition duration-300 block`}
+            className={`w-[200px] bg-gray-100 ${styles.handWritten} font-bold py-2 px-4 rounded  hover:scale-110  transition duration-300 block`}
             style={{ display: "block" }}
             onClick={saveArticle}
           >

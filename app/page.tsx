@@ -1,20 +1,20 @@
 import styles from "./home.module.scss";
 import React from 'react'
 import Image from "next/image";
-import EChart from './echart/page'
 import SideNav from "./components/navbar/SideNav";
 import { FaInstagram, FaGithub, FaFacebook, FaEnvelope } from 'react-icons/fa6';
 
 function Page() {
   return (
     <>
+
       <div id="section1" className="inline-block">
         <p className={`${styles.header} text-center text-[130px] sm:text-[200px] sm:ml-10 ml-5 w-fit -z-10 relative leading-[0.8em]`}>
           <span>Kaiyi's Home</span>
           <img className="absolute -z-10 top-0 object-contain w-[80%]" src="/bg1.png" />
         </p>
       </div>
-      <div id="section2" className="flex flex-col items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-9" data-aos="zoom-in">
+      <div id="section2" className="flex flex-col items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-9 sm:" data-aos="zoom-in">
         <p className={`${styles.subHeader} sm:mt-20 ml-18 sm:ml-20 mt-8`}>about me</p>
         <p className={`${styles.article} ml-12 mt-8 mx-8 sm:ml-8 sm:w-[50vw] sm:mt-20 sm:max-w-[700px]`}>
           Hello world! My name is Kaiyi<br />
@@ -22,7 +22,7 @@ function Page() {
           Now I'm a passionate web developer and designer, dedicated to crafting seamless, user-friendly applications that blend functionality with aesthetic appeal.<br />
           I'm always curious and open to new ideas, seeking opportunities to collaborate with others, share knowledge, and explore innovative approaches. My goal is to not only improve my own skills but also contribute to a community of like-minded individuals.<br />
           Let's connect and create something impactful together!
-          &nbsp;
+          <br />
           <a href="https://github.com/kaiyi952" >
             <FaGithub className="inline-block" />
           </a>
@@ -44,7 +44,7 @@ function Page() {
           width={400}
           height={400}
           alt="Picture of the author"
-          className="w-[80%] sm:w-auto mt-8 sm:mr-[7%] xl:mr-[15%] "
+          className=" w-[80%] sm:w-[400px] mt-8 sm:mr-[7%] xl:mr-[15%] hidden md:inline-block"
           data-aos="fade-up"
         />
       </div >
@@ -58,14 +58,7 @@ function Page() {
         />
       </div>
       <div id='section3' className="flex flex-col-reverse items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-0" data-aos="fade-up">
-        <EChart />
-        {/* <Image
-          src="/kaiyi.png"
-          width={400}
-          height={400}
-          alt="Picture of the author"
-          className="w-[80%] sm:w-auto mt-2 sm:ml-10 xl:ml-12"
-        /> */}
+        <figure className="flex-none w-[500] sm:ml-10 sm:w-[500] mt-2 xl:ml-14"><embed src="https://wakatime.com/share/@564d6b19-0a9d-4877-9727-cf8496a1b184/a4228140-47ba-4953-8c53-08d1877666c0.svg"></embed></figure>
         <ul className={`${styles.article} mt-8 mx-8 sm:ml-18 ml-12 sm:w-[50vw] sm:mt-10 sm:max-w-[700px]`}>
           <li><b>Languages: </b> JavaScript, TypeScript, HTML, CSS, Python, C#</li>
           <li><b>Frameworks & Libraries: </b> React, Next.js, Blazor, Tailwind CSS</li>
@@ -76,8 +69,8 @@ function Page() {
         <p className={`${styles.subHeader} sm:mt-12 sm:mr-[7%] xl:mr-[15%] mt-8`}>tech</p>
       </div>
       <div id='section4' className="flex flex-col items-center w-screen sm:items-start sm:flex-row sm:justify-start md:mt-9" data-aos="fade-up">
-        <p className={`${styles.subHeader} sm:mt-20 ml-18 sm:ml-20 mt-8`}>projects</p>
-        <section className={`${styles.article} ml-12 mt-8 mx-8 sm:ml-20  xl:ml-20 sm:mt-20 sm:max-w-[800px]`}>
+        <p className={`${styles.subHeader} sm:mt-6 ml-18 sm:ml-20 mt-8`}>projects</p>
+        <section className={`${styles.article} ml-12 mt-8 mx-8 sm:ml-20  xl:ml-20 sm:mt-6 sm:max-w-[800px]`}>
           <div className="flex justify-between sm:w-4/5">
             <a className="font-bold hover:text-slate-500" href="https://next-js-home-away.vercel.app/">
               Home Away Website

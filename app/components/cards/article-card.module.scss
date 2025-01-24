@@ -30,5 +30,8 @@
   font-style: normal;
   color: #2733f5;
   line-height: 1.5em;
+   white-space: nowrap;      /* 不换行 */
+    overflow: hidden;        /* 隐藏超出部分 */
+    text-overflow: ellipsis; /* 使用省略号显示溢出内容 */
 }
 

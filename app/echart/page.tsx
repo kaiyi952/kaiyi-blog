@@ -3,6 +3,7 @@
 import React from 'react';
 import ReactECharts from 'echarts-for-react';
 
+
 export const options = {
     series: [
         {
@@ -26,7 +27,7 @@ export const options = {
 };
 
 const Echart: React.FC = () => {
-    return <ReactECharts className="flex-none sm:ml-0 basis-4/12 sm:w-auto mt-2 xl:ml-8" option={options} />;
+    return <ReactECharts className="flex-none w-[500] sm:ml-3 sm:w-[500] mt-2 xl:ml-8" option={options} />;
 };
 
 export default Echart;

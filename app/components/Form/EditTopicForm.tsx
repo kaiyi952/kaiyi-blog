@@ -115,11 +115,11 @@ function EditBlog({ id, title, description, tags, content }: BlogDetail) {
                     {/* Submit button */}
                     <button
                         type="submit"
-                        className={`w-[200px] bg-gray-100 ${styles.handWritten} font-bold py-2 px-4 rounded hover:bg-blue-600 hover:text-white transition duration-300 block`}
+                        className={`w-[200px] bg-gray-100 ${styles.handWritten} font-bold py-2 px-4 rounded hover:scale-110  transition duration-300 block`}
                         style={{ display: "block" }}
                         onClick={editArticle}
                     >
-                        Submit
+                        Update
                     </button>
                 </div>
             </div>

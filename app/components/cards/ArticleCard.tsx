@@ -10,15 +10,15 @@ const ArticleCard: FC<{ blog: BlogEntry }> = (props) => {
     return (
         <>
             <Link href={`/article/${id}`} key={id} >
-                <div className='flex justify-between mb-4'>
-                    <div>
+                <div className='flex flex-col  justify-between mb-4 max-w-[700px] '>
+                    <div className='flex justify-between'>
                         <h1 className={`${styles.title}`}>{title}</h1>
-                        <div className={`${styles.description}`}>{description}</div>
+                        <div className='flex items-start gap-2'>
+                            <p className={`${styles.description}`}>{new Date(createdAt).toLocaleDateString()}</p>
+                            <ArticleActionButtons id={id} />
+                        </div>
                     </div>
-                    <div className='flex items-start gap-2'>
-                        <p className={`${styles.description}`}>{new Date(createdAt).toLocaleDateString()}</p>
-                        <ArticleActionButtons id={id} />
-                    </div>
+                    <div className={`${styles.description} max-w-[700px] `}>{description}</div>
                 </div>
             </Link>
         </>
