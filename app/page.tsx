@@ -5,7 +5,6 @@ import SideNav from "./components/navbar/SideNav";
 import { FaInstagram, FaGithub, FaFacebook, FaEnvelope } from 'react-icons/fa6';
 
 function Page() {
-
   return (
     <>
       <div id="section1" className="inline-block">
