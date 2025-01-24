@@ -7,7 +7,6 @@ import { FaInstagram, FaGithub, FaFacebook, FaEnvelope } from 'react-icons/fa6';
 function Page() {
   return (
     <>
-
       <div id="section1" className="inline-block">
         <p className={`${styles.header} text-center text-[130px] sm:text-[200px] sm:ml-10 ml-5 w-fit -z-10 relative leading-[0.8em]`}>
           <span>Kaiyi&apos;s Home</span>
