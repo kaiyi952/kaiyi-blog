@@ -10,7 +10,7 @@ function Page() {
 
       <div id="section1" className="inline-block">
         <p className={`${styles.header} text-center text-[130px] sm:text-[200px] sm:ml-10 ml-5 w-fit -z-10 relative leading-[0.8em]`}>
-          <span>Kaiyi's Home</span>
+          <span>Kaiyi&apos;s Home</span>
           <img className="absolute -z-10 top-0 object-contain w-[80%]" src="/bg1.png" />
         </p>
       </div>
