@@ -15,11 +15,8 @@ const PER_PAGE = 4;
 
 const BlogPage = async ({ params }: { params: { id?: string[] } }) => {
 
-    // 从 params 中获取页码
     const currentPage = params?.id?.length ? parseInt(params.id[1], 10) : 1;
     await connectMongoDB();
-
-    // 计算总页数
     const allBlogs = await Blog.find();
     const blogs = (await Blog.find().sort({ createdAt: -1 })).slice(PER_PAGE * (currentPage - 1), PER_PAGE * currentPage);
     const totalPages = Math.ceil(allBlogs.length / PER_PAGE);
