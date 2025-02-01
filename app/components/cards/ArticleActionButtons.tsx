@@ -8,6 +8,7 @@ import { FaRegTrashCan } from "react-icons/fa6";
 
 export interface ArticleActionButtonsProps {
     id: string;
+
 }
 
 const ArticleActionButtons: FC<ArticleActionButtonsProps> = ({ id }) => {
@@ -29,6 +30,7 @@ const ArticleActionButtons: FC<ArticleActionButtonsProps> = ({ id }) => {
                 method: "DELETE",
             });
             router.refresh();
+
         }
     }
 

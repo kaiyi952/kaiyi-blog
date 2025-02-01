@@ -1,0 +1,49 @@
+.main {
+  display: flex;
+  gap: 0.625rem;
+  color: #2733f5;;
+  justify-content: center;
+   font-family: "Recursive", serif;
+   font-variation-settings: "CASL" 1,"MONO" .5;
+
+   
+}
+
+
+.prev{
+   font-family: "Recursive", serif;
+  font-variation-settings: "CASL" 0,"MONO" .3;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+   display: inline-block;
+}
+.prev:hover{
+  display: inline-block;
+  transform: scale(1.2);
+  font-weight: bold;
+   }
+
+.pageCount{
+   font-family: "Recursive", serif;
+  font-variation-settings: "CASL" 0,"MONO" .3;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+   display: inline-block;
+}
+
+
+.next{
+  font-family: "Recursive", serif;
+  font-variation-settings: "CASL" 0,"MONO" .3;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+   display: inline-block;
+}
+.next:hover{
+  display: inline-block;
+  transform: scale(1.2);
+  font-weight: bold;
+   }

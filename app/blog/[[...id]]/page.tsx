@@ -14,8 +14,8 @@ const PER_PAGE = 4;
 
 
 const BlogPage = async ({ params }: { params: { id?: string[] } }) => {
-    // 从 params 中获取页码
 
+    // 从 params 中获取页码
     const currentPage = params?.id?.length ? parseInt(params.id[1], 10) : 1;
     await connectMongoDB();
 
@@ -34,10 +34,10 @@ const BlogPage = async ({ params }: { params: { id?: string[] } }) => {
                     <img className="absolute -z-20 top-0 object-contain w-[80%]" src="/bg1.png" />
                 </p>
             </div>
-            <div className="flex flex-col items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-9" data-aos="zoom-in">
+            <div className="flex flex-col items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-9" >
                 <div className='flex flex-col sm:ml-10 mx-auto w-[95%]'>
                     <div className={`${styles.article} mt-8 mx-8 sm:w-[50vw] sm:mt-20 sm:max-w-[700px]`}>
-                        <div className='flex'>
+                        <div className='flex my-8 sm:my-0'>
                             <p className='md:inline-block'><b>Tags: </b></p>
                             <ArticleTags tags={tags.map((v) => v.name)} />
                             <SignedIn>
@@ -45,7 +45,7 @@ const BlogPage = async ({ params }: { params: { id?: string[] } }) => {
                             </SignedIn>
                         </div>
                     </div>
-                    <div className="mt-0 mx-8 sm:w-[50vw] sm:mt-6 sm:max-w-[700px]">
+                    <div className="mt-0 mx-8 sm:w-[50vw] sm:mt-6 sm:max-w-[700px] h-[290px]" data-aos="fade-in">
                         <BlogList blogs={blogs} />
                     </div>
                     <Pagination currentPage={currentPage} totalPages={totalPages} />

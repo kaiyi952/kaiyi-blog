@@ -13,7 +13,7 @@ function Page() {
           <img className="absolute -z-10 top-0 object-contain w-[80%]" src="/bg1.png" />
         </p>
       </div>
-      <div id="section2" className="flex flex-col items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-9 sm:" data-aos="zoom-in">
+      <div id="section2" className="flex flex-col items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-9 sm:" data-aos="fade-in">
         <p className={`${styles.subHeader} sm:mt-20 ml-18 sm:ml-20 mt-8`}>about me</p>
         <p className={`${styles.article} ml-12 mt-8 mx-8 sm:ml-8 sm:w-[50vw] sm:mt-20 sm:max-w-[700px]`}>
           Hello world! My name is Kaiyi<br />
@@ -44,7 +44,7 @@ function Page() {
           height={400}
           alt="Picture of the author"
           className=" w-[80%] sm:w-[400px] mt-8 sm:mr-[7%] xl:mr-[15%] hidden md:inline-block"
-          data-aos="fade-up"
+          data-aos="fade-in"
         />
       </div >
       <div className="flex justify-center " data-aos="fade-up" >
