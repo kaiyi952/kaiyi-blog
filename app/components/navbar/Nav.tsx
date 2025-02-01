@@ -14,6 +14,7 @@ import {
   UserButton,
   SignOutButton
 } from '@clerk/nextjs'
+import page from '../footer/page';
 
 function Nav() {
   const animeController = useRef<AnimeInstance | null>(null);
@@ -93,7 +94,7 @@ function Nav() {
         />
       </div>
       <div>
-        <Link href="/blog" style={{ color: '#2733f5' }} className='mr-6' ref={rightElemRef}>blog</Link>
+        <Link href={`/blog`} style={{ color: '#2733f5' }} className='mr-6' ref={rightElemRef}>blog</Link>
         <Link href="/blog" style={{ color: '#2733f5' }} className='mr-6'>friends</Link>
         <SignedOut>
           <SignInButton mode='modal' >

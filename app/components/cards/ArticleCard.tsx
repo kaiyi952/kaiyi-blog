@@ -9,7 +9,7 @@ const ArticleCard: FC<{ blog: BlogEntry }> = (props) => {
     const { id, title, description, createdAt }: BlogEntry = props.blog;
     return (
         <>
-            <Link href={`/article/${id}`} key={id} >
+            <Link href={`/blog/${id}`} key={id} >
                 <div className='flex flex-col  justify-between mb-4 max-w-[700px] '>
                     <div className='flex justify-between'>
                         <h1 className={`${styles.title}`}>{title}</h1>
