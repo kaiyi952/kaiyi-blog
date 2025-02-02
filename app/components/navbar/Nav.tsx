@@ -3,18 +3,14 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import styles from "./nav.module.scss";
 import Link from 'next/link';
-import SearchBar from './searchbar';
 import Image from 'next/image';
 import anime, { AnimeInstance } from 'animejs';
 import {
-  ClerkProvider,
   SignInButton,
   SignedIn,
   SignedOut,
-  UserButton,
   SignOutButton
 } from '@clerk/nextjs'
-import page from '../footer/page';
 
 function Nav() {
   const animeController = useRef<AnimeInstance | null>(null);
