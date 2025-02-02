@@ -2,7 +2,8 @@ import styles from "./home.module.scss";
 import React from 'react'
 import Image from "next/image";
 import SideNav from "./components/navbar/SideNav";
-import { FaInstagram, FaGithub, FaFacebook, FaEnvelope } from 'react-icons/fa6';
+import { FaInstagram, FaGithub, FaEnvelope } from 'react-icons/fa6';
+import Link from "next/link";
 
 function Page() {
   return (
@@ -33,8 +34,8 @@ function Page() {
           <a href="https://www.instagram.com/kaiyi_7/profilecard/?igsh=ZDI4M2J3aW1vdzQ1" >
             <FaInstagram className="inline-block" />
           </a>&nbsp;
-          <a href="https://www.facebook.com/share/15YfS8HcXQ/?mibextid=wwXIfr" >
-            <FaFacebook className="inline-block" />
+          <a href="https://bsky.app/profile/kaiyiho.bsky.social" className={styles.bsky}>
+            <img src='bsky.svg' className="inline-block w-[17px] mb-[2px] ml-[2px]" />
           </a>
         </p>
 
@@ -57,7 +58,7 @@ function Page() {
         />
       </div>
       <div id='section3' className="flex flex-col-reverse items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-0" data-aos="fade-up">
-        <figure className="flex-none w-[500] sm:ml-10 sm:w-[500] mt-2 xl:ml-14"><embed src="https://wakatime.com/share/@564d6b19-0a9d-4877-9727-cf8496a1b184/a4228140-47ba-4953-8c53-08d1877666c0.svg"></embed></figure>
+        <figure className="flex-none w-[400] sm:ml-10 sm:w-[500] mt-2 xl:ml-14"><embed src="https://wakatime.com/share/@564d6b19-0a9d-4877-9727-cf8496a1b184/a4228140-47ba-4953-8c53-08d1877666c0.svg"></embed></figure>
         <ul className={`${styles.article} mt-8 mx-8 sm:ml-18 ml-12 sm:w-[50vw] sm:mt-10 sm:max-w-[700px]`}>
           <li><b>Languages: </b> JavaScript, TypeScript, HTML, CSS, Python, C#</li>
           <li><b>Frameworks & Libraries: </b> React, Next.js, Blazor, Tailwind CSS</li>
@@ -112,6 +113,7 @@ function Page() {
         </ul>
         <p className={`${styles.subHeader} sm:mt-12 sm:mr-[7%] xl:mr-[15%] mt-8`}>trivia</p>
       </div>
+      <div><Link href='/blog' className={styles.allPosts}>All Blogs -&gt;</Link></div>
       <SideNav />
     </>
   )

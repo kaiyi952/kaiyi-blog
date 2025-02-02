@@ -31,3 +31,19 @@
   font-size: 72px;
   line-height: 1em; 
 }
+
+.allPosts{
+  font-family: "Recursive", serif;
+  //  font-family: "Noto Sans Mono", serif;
+  font-variation-settings: "CASL" 0,"MONO" .8;
+  display: flex;
+  justify-content: center;
+  color: #f8d378;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.allPosts:hover{
+transform: scale(1.2);
+}

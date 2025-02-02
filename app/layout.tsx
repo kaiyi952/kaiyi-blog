@@ -6,6 +6,7 @@ import {
   ClerkProvider,
 } from '@clerk/nextjs'
 import InitAOS from "./components/InitAOS/InitAOS";
+import Footer from "./components/footer/page";
 
 
 const geistSans = Geist({
@@ -39,6 +40,7 @@ export default function RootLayout({
           <Nav />
           <InitAOS />
           {children}
+          <Footer />
         </body>
       </html>
     </ClerkProvider>
