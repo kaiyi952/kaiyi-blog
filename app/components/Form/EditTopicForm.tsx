@@ -50,7 +50,7 @@ function EditBlog({ id, title, description, tags, content }: BlogDetail) {
             if (!response.ok) {
                 throw new Error("Failed to save article");
             } else {
-                route.back();
+                route.push('/blog');
             }
             console.log("Blog saved successfully!");
         } catch (error) {
