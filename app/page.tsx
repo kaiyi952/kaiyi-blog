@@ -19,9 +19,9 @@ function Page() {
         <p className={`${styles.article} ml-12 mt-8 mx-8 sm:ml-8 sm:w-[50vw] sm:mt-20 sm:max-w-[700px]`}>
           Hello world! My name is Kaiyi<br />
           Used to be a student in English Literature<br />
-          Now I'm a passionate web developer and designer, dedicated to crafting seamless, user-friendly applications that blend functionality with aesthetic appeal.<br />
-          I'm always curious and open to new ideas, seeking opportunities to collaborate with others, share knowledge, and explore innovative approaches. My goal is to not only improve my own skills but also contribute to a community of like-minded individuals.<br />
-          Let's connect and create something impactful together!
+          Now I&apos;m a passionate web developer and designer, dedicated to crafting seamless, user-friendly applications that blend functionality with aesthetic appeal.<br />
+          I&apos;m always curious and open to new ideas, seeking opportunities to collaborate with others, share knowledge, and explore innovative approaches. My goal is to not only improve my own skills but also contribute to a community of like-minded individuals.<br />
+          Let&apos;s connect and create something impactful together!
           <br />
           <a href="https://github.com/kaiyi952" >
             <FaGithub className="inline-block" />
@@ -62,7 +62,7 @@ function Page() {
         <ul className={`${styles.article} mt-8 mx-8 sm:ml-18 ml-12 sm:w-[50vw] sm:mt-10 sm:max-w-[700px]`}>
           <li><b>Languages: </b> JavaScript, TypeScript, HTML, CSS, Python, C#</li>
           <li><b>Frameworks & Libraries: </b> React, Next.js, Blazor, Tailwind CSS</li>
-          <li><b>Databases: </b> MySQL, Prisma</li>
+          <li><b>Databases: </b> MySQL, Prisma, MongoDB</li>
           <li><b>Tools & Platforms: </b> Figma, Git, Jest, Mocha, Vercel</li>
           <li><b>Others: </b> REST APIs, Responsive Design, Graphic Design</li>
         </ul>
@@ -113,7 +113,7 @@ function Page() {
         </ul>
         <p className={`${styles.subHeader} sm:mt-12 sm:mr-[7%] xl:mr-[15%] mt-8`}>trivia</p>
       </div>
-      <div><Link href='/blog' className={styles.allPosts}>All Blogs -&gt;</Link></div>
+      <div><Link href='/blog' className={styles.allPosts} >All Blogs -&gt;</Link></div>
       <SideNav />
     </>
   )

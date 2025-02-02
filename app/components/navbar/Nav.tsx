@@ -46,7 +46,7 @@ function Nav() {
       easing: "easeInOutSine",
       value: 1,
       direction: "alternate",
-      update(anim) {
+      update() {
         const val = currentLeft.current.value;
         if (!imageRef.current) return;
         setLeft(bounds.current.l + val * bounds.current.distance);
