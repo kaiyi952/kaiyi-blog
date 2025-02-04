@@ -5,9 +5,10 @@ function Footer() {
   return (
     <div className={styles.main}>
       <div className={styles.divider}>---End---</div>
+      <div className={styles.footerSlogan}>應無所住，而生其心</div>
       <div className={styles.footerText}><span>&copy; 2025 Kaiyi under </span><a href="https://creativecommons.org/licenses/by-sa/4.0/" className='underline'>CC BY-SA 4.0</a>
         <span className={styles.footerIcons}>
-          <a href="https://github.com/kaiyi952" className='sm:ml-[40px] '>
+          <a href="https://github.com/kaiyi952" target="_blank" className='sm:ml-[40px] '>
             <FaGithub className="inline-block" />
           </a>
           &nbsp;
@@ -15,10 +16,10 @@ function Footer() {
             <FaEnvelope className="inline-block" />
           </a>
           &nbsp;
-          <a href="https://www.instagram.com/kaiyi_7/profilecard/?igsh=ZDI4M2J3aW1vdzQ1" >
+          <a href="https://www.instagram.com/kaiyi_7/profilecard/?igsh=ZDI4M2J3aW1vdzQ1" target="_blank">
             <FaInstagram className="inline-block" />
           </a>&nbsp;
-          <a href="https://bsky.app/profile/kaiyiho.bsky.social" className={styles.bsky}>
+          <a href="https://bsky.app/profile/kaiyiho.bsky.social" className={styles.bsky} target="_blank">
             <img src='bsky.svg' className="inline-block w-[17px] mb-[2px] ml-[1px]" />
           </a>
         </span>

@@ -14,8 +14,9 @@ const PER_PAGE = 4;
 
 
 const BlogPage = async ({ searchParams }: { searchParams: { tag?: string, page?: string } }) => {
-    const tag = searchParams.tag ?? "";
-    const currentPage = searchParams?.page ? parseInt(searchParams.page, 10) : 1;
+    const params = await searchParams;
+    const tag = params.tag ?? "";
+    const currentPage = params?.page ? parseInt(params.page, 10) : 1;
     await connectMongoDB();
     const tags = await BlogTag.find();
     let allBlogs;

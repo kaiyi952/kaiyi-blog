@@ -22,6 +22,18 @@
   background-color: white;
 }
 
+.footerSlogan{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+   font-family: "Recursive", serif;
+  font-variation-settings: "CASL" 0,"MONO" .8;
+  font-size: 18px;
+  font-weight: 550;
+  font-style: normal;
+  color: #2733f5;
+}
+
 .footerText{
   display: flex;
   justify-content: center;
@@ -36,6 +48,11 @@
 }
 
  @media (max-width: 768px) {
+
+  .footerSlogan{
+     font-size: 14px;
+    font-weight: 550;
+  }
   .footerText{
     font-size: 14px;
     font-weight: 550;
