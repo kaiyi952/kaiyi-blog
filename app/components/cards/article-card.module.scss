@@ -1,3 +1,7 @@
+.arrow{
+  color: #f3c85d;
+}
+
 .title {
   // font-family: "Caveat Brush", serif;
   font-family: "Recursive", serif;
@@ -18,20 +22,33 @@
   font-style: normal;
   color: #2733f5;
   line-height: 1.5em;
-  transform: scale(1.1); 
+  transform: scale(1.05); 
+}
+
+.date{
+  font-family: "Recursive", serif;
+  //  font-family: "Noto Sans Mono", serif;
+  font-variation-settings: "CASL" 0,"MONO" .5;
+  font-size: 18px;
+  font-weight: 700;
+  font-style: normal;
+  color: #2733f5;
+  line-height: 1.5em;
 }
 
 .description {
     font-family: "Recursive", serif;
   //  font-family: "Noto Sans Mono", serif;
   font-variation-settings: "CASL" 0,"MONO" .3;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 500;
   font-style: normal;
-  color: #2733f5;
+  color: #696970;
   line-height: 1.5em;
-   white-space: nowrap;     
-    overflow: hidden;       
-    text-overflow: ellipsis; 
+  white-space: normal;
+    
+    /* 控制换行方式（可选） */
+    word-wrap: break-word;  /* 适用于较长的单词或URL */
+    overflow-wrap: break-word; /* 现代浏览器推荐 */ 
 }
 

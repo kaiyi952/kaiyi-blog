@@ -42,16 +42,16 @@ const BlogPage = async ({ searchParams }: { searchParams: { tag?: string, page?:
             </div>
             <div className="flex flex-col items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-9" >
                 <div className='flex flex-col sm:ml-10 mx-auto w-[95%]'>
-                    <div className={`${styles.article} mt-8 mx-8 sm:w-[50vw] sm:mt-20 sm:max-w-[700px]`}>
+                    <div className={`${styles.tags} mt-8 mx-8 sm:w-[50vw] sm:mt-20 sm:max-w-[700px]`}>
                         <div className='flex my-8 sm:my-0'>
-                            <p className='md:inline-block'><b>Tags: </b></p>
+                            <p className='md:inline-block'><b>Filter: </b></p>
                             <ArticleTags tags={tags.map((v) => v.name)} activeTag={tag} />
                             <SignedIn>
                                 <Link href="/createblog" className={`${styles.articleHover} ml-8 md:inline-block`} style={{ color: '#2733f5' }}>Add</Link>
                             </SignedIn>
                         </div>
                     </div>
-                    <div className="mt-0 mx-8 sm:w-[50vw] sm:mt-6 sm:max-w-[700px] h-[290px]" data-aos="fade-in">
+                    <div className="mt-0 mx-8 sm:w-[50vw] sm:mt-6 sm:max-w-[700px] h-auto" data-aos="fade-in">
                         <BlogList blogs={blogs} />
                     </div>
                     <Pagination currentPage={currentPage} totalPages={totalPages} tag={tag} />
