@@ -20,7 +20,7 @@ function Footer() {
             <FaInstagram className="inline-block" />
           </a>&nbsp;
           <a href="https://bsky.app/profile/kaiyiho.bsky.social" className={styles.bsky} target="_blank">
-            <img src='bsky.svg' className="inline-block w-[17px] mb-[2px] ml-[1px]" />
+            <img src='/bsky.svg' className="inline-block w-[17px] mb-[2px] ml-[1px]" />
           </a>
         </span>
       </div>

@@ -1,22 +1,29 @@
-import React from 'react'
-// import styles from "./article.module.scss"
-import connectMongoDB from '@/libs/mongodb';
-import Blog from '@/app/model/Blog';
-import { PageNotFoundError } from 'next/dist/shared/lib/utils';
+import React from "react";
+import connectMongoDB from "@/libs/mongodb";
+import Blog from "@/app/model/Blog";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import mongoose from "mongoose";
 
-const Articlepage = async ({ params }: { params: Promise<{ id: string }> }) => {
-    const id = (await params).id;
+
+const ArticlePage = async ({ params }: { params: Promise<{ id: string }> }) => {
+    const { id } = await params;
     await connectMongoDB();
-    const blog = await Blog.findById(id);
-    if (!blog) {
-        throw new PageNotFoundError("blog");
+    if (!mongoose.isValidObjectId(id)) {
+        return <div>Invalid Blog ID</div>;
     }
-    return (
-        <div className='flex flex-col items-center'>
-            <div>{blog.title}</div>
-            <div>{blog.content}</div>
-        </div>
-    )
-}
+    const blog = await Blog.findById(id);
 
-export default Articlepage
+    if (!blog) {
+        return <div>no blog...</div>;
+    }
+    const markdown = await blog.content
+
+    return (
+        <div className="prose flex flex-col items-center justify-center w-[100%]">
+            <h1>{blog.title}</h1>
+            <MDXRemote source={markdown} />
+        </div>
+    );
+};
+
+export default ArticlePage;
