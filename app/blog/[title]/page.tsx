@@ -6,13 +6,15 @@ import mongoose from "mongoose";
 import styles from "./article.module.scss";
 
 
-const ArticlePage = async ({ params }: { params: Promise<{ id: string }> }) => {
-    const { id } = await params;
+const ArticlePage = async ({ params }: { params: Promise<{ title: string }> }) => {
+    const { title } = await params;
+    const rawTitle = decodeURIComponent(title);
+    console.log(rawTitle)
     await connectMongoDB();
-    if (!mongoose.isValidObjectId(id)) {
+    if (!mongoose.isValidObjectId(title)) {
         return <div>Invalid Blog ID</div>;
     }
-    const blog = await Blog.findById(id);
+    const blog = await Blog.findOne({ rawTitle });
 
     if (!blog) {
         return <div>no blog...</div>;

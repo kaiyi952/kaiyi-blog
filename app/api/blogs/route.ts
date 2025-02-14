@@ -13,7 +13,8 @@ interface CreatePostRequest {
 export async function POST(req: NextRequest) {
     const { title, content, description, tags } = (await req.json()) as CreatePostRequest;
     await connectMongoDB();
-    await Blog.create({ title, content, description, tags });
+    const blog = new Blog({ title, content, description, tags });
+    await blog.save();
     const existedTags = (await BlogTag.find({ name: { $in: tags } })).map((v) => v.name);
     await BlogTag.insertMany(
         tags

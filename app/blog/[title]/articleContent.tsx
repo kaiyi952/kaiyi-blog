@@ -3,7 +3,6 @@
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { useEffect, useState } from "react";
-import { compileMDX } from 'next-mdx-remote/rsc';
 
 const ArticleContent = ({ content }: { content: string }) => {
   const [mdxSource, setMdxSource] = useState<Awaited<ReturnType<typeof serialize>> | null>(null);

@@ -7,9 +7,11 @@ import { BlogEntry } from '../List/BlogList'
 
 const ArticleCard: FC<{ blog: BlogEntry }> = (props) => {
     const { id, title, description, createdAt }: BlogEntry = props.blog;
+    const param_title = title.toLowerCase().replace(/\s+/g, "-")
+
     return (
         <>
-            <Link href={`/blog/${id}`} key={id} >
+            <Link href={`/blog/${param_title}`} key={id} >
                 <div className='flex flex-col  justify-between mb-4 max-w-[700px] '>
                     <div className='flex justify-between'>
                         <div className={styles.title}><span className={styles.arrow}>&gt;</span> <span className='underline'>{title}</span>   </div>
