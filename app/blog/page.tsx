@@ -31,7 +31,6 @@ const BlogPage = async ({ searchParams }: { searchParams: { tag?: string, page?:
     const totalPages = Math.ceil(allBlogs.length / PER_PAGE);
 
 
-
     return (
         <div className={`${styles.main}`}>
             <div className="inline-block">
@@ -59,6 +58,9 @@ const BlogPage = async ({ searchParams }: { searchParams: { tag?: string, page?:
                 <p className={`w-[80%] sm:w-auto mt-8 sm:mr-[20%] sm:ml-10 xl:mr-[30%] ${styles.subHeader} max-w-[300px]`}>
                     Live in Paradox
                 </p>
+            </div>
+            <div>
+                <iframe width="100%" height="166" scrolling="no" frameBorder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/61343384&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
             </div>
         </div >
     )
