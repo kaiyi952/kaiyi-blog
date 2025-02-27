@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  transpilePackages: ['@mdxeditor/editor', 'react-diff-view'],
+  transpilePackages: ['@mdxeditor/editor', 'react-diff-view', 'next-mdx-remote'],
   reactStrictMode: true,
   webpack: (config) => {
     // this will override the experiments
@@ -11,5 +11,6 @@ const nextConfig: NextConfig = {
     return config;
   },
 };
+
 
 export default nextConfig;

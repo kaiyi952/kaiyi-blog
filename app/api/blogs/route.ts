@@ -2,8 +2,6 @@ import Blog from "@/app/model/Blog";
 import BlogTag from "@/app/model/BlogTag";
 import connectMongoDB from "@/libs/mongodb";
 import { NextResponse, NextRequest } from "next/server";
-import slugify from "slugify";
-import pinyin from 'tiny-pinyin';
 
 interface CreatePostRequest {
     title: string,
@@ -15,9 +13,7 @@ interface CreatePostRequest {
 export async function POST(req: NextRequest) {
     const { title, content, description, tags } = (await req.json()) as CreatePostRequest;
     await connectMongoDB();
-    const convertedTitle = pinyin.convertToPinyin(title, '-', true)
-    const slug = slugify(convertedTitle, { lower: true })
-    const blog = new Blog({ title, content, description, tags, slug });
+    const blog = new Blog({ title, content, description, tags });
     await blog.save();
     const existedTags = (await BlogTag.find({ name: { $in: tags } })).map((v) => v.name);
     await BlogTag.insertMany(
