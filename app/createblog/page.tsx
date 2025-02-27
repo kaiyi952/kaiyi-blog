@@ -5,6 +5,7 @@ import styles from "./createBlog.module.scss"
 import TagControler from '../components/tagcontroler/TagControler';
 import Editor from './Editor';
 import { useRouter } from 'next/navigation';
+import matter from 'gray-matter';
 
 function CreateBlog() {
 
@@ -25,6 +26,14 @@ function CreateBlog() {
 
   const saveArticle = async () => {
     try {
+      const frontmatter = {
+        title,
+        description,
+        tags: selectedTags,
+        createdAt: new Date().toISOString(),
+      };
+
+      const ArticleWithFrontmatter = matter.stringify(article, frontmatter);
       const response = await fetch("/api/blogs", {
         method: "POST",
         headers: {
@@ -34,7 +43,7 @@ function CreateBlog() {
           title: title,
           description: description,
           tags: selectedTags,
-          content: article,
+          content: ArticleWithFrontmatter,
         }),
       });
 
