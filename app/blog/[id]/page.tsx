@@ -5,11 +5,11 @@ import { compileMDX } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import mongoose from "mongoose";
 import styles from "./article.module.scss";
+import { codeToHtml } from "shiki";
 
 export async function generateMetadata({ params }: { params: { id: string } }) {
     const { id } = await params;
     await connectMongoDB();
-
     if (!mongoose.isValidObjectId(id)) {
         return { title: "Invalid Blog", description: "The blog ID is invalid" };
     }
@@ -40,8 +40,15 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
     };
 }
 
+async function CodeBlock({ children, className }: { children: string; className?: string }) {
+    const lang = className?.replace("language-", "") || "text";
+    const highlightedCode = await codeToHtml(children, { lang, theme: "github-dark" });
+
+    return <div dangerouslySetInnerHTML={{ __html: highlightedCode }} />;
+}
+
 const ArticlePage = async ({ params }: { params: { id: string } }) => {
-    const { id } = params;
+    const { id } = await params;
     await connectMongoDB();
 
     if (!mongoose.isValidObjectId(id)) {
@@ -62,7 +69,11 @@ const ArticlePage = async ({ params }: { params: { id: string } }) => {
         createdAt: string;
     }>({
         source: markdown,
-        options: { parseFrontmatter: true, mdxOptions: { remarkPlugins: [remarkGfm] } },
+        options: { parseFrontmatter: true, mdxOptions: { remarkPlugins: [remarkGfm], } },
+        components: {
+            pre: ({ children }) => <>{children}</>,
+            code: CodeBlock,
+        },
     });
 
     return (
@@ -71,7 +82,6 @@ const ArticlePage = async ({ params }: { params: { id: string } }) => {
                 <h1 className="text-center text-3xl font-bold">
                     {frontmatter?.title || blog?.title || "Untitled"}
                 </h1>
-
                 <div className={`prose prose-a:text-blue-500 w-full mx-8 ${styles.main}`}>
                     {content}
                 </div>
