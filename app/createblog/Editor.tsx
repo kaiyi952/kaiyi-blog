@@ -30,9 +30,6 @@ const Editor = ({
     onChange,
     value
 }: { onChange: (md: string) => void, value: string }) => {
-    function codeSyntaxHighlightingPlugin(): import("@mdxeditor/editor").RealmPlugin {
-        throw new Error('Function not implemented.');
-    }
 
     return (
         <MDXEditor
@@ -40,7 +37,6 @@ const Editor = ({
             onChange={onChange}
             markdown={value}
             plugins={[
-                codeSyntaxHighlightingPlugin(),
                 frontmatterPlugin(),
                 codeBlockPlugin({ defaultCodeBlockLanguage: 'ts' }),
                 codeMirrorPlugin({ codeBlockLanguages: { js: 'JavaScript', css: 'CSS', ts: 'TypeScript' } }),
