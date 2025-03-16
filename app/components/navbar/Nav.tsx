@@ -82,7 +82,7 @@ function Nav() {
           style={{ left: `${left}px` }}
           onClick={handleAnimatedImageClick}
           ref={imageRef}
-          src="/skate-icon.png"
+          src="/skate-icon.PNG"
           width={60}
           height={60}
           alt="Picture of the author"

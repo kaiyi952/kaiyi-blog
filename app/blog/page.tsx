@@ -36,7 +36,7 @@ const BlogPage = async ({ searchParams }: { searchParams: Promise<{ tag?: string
             <div className="inline-block">
                 <p className={`${styles.header} text-center text-[130px] sm:text-[200px] sm:ml-10 ml-5 w-fit -z-10 relative leading-[0.8em] select-none`}>
                     <span>Kaiyi&apos;s Blog</span>
-                    <img className="absolute -z-20 top-0 object-contain w-[80%]" src="/bg1.png" />
+                    <img className="absolute -z-20 top-0 object-contain w-[80%]" src="/bg1.PNG" />
                 </p>
             </div>
             <div className="flex flex-col items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-9" >
