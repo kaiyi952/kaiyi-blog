@@ -7,7 +7,7 @@ import mongoose from "mongoose";
 import styles from "./article.module.scss";
 import { codeToHtml } from "shiki";
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
     await connectMongoDB();
     if (!mongoose.isValidObjectId(id)) {
@@ -47,7 +47,7 @@ async function CodeBlock({ children, className }: { children: string; className?
     return <div dangerouslySetInnerHTML={{ __html: highlightedCode }} />;
 }
 
-const ArticlePage = async ({ params }: { params: { id: string } }) => {
+const ArticlePage = async ({ params }: { params: Promise<{ id: string }> }) => {
     const { id } = await params;
     await connectMongoDB();
 

@@ -1,7 +1,6 @@
 import Blog from "@/app/model/Blog";
 import connectMongoDB from "@/libs/mongodb";
 import { NextRequest, NextResponse } from "next/server";
-import mongoose from "mongoose";
 
 export async function DELETE(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
     const id = (await params).id
@@ -18,25 +17,24 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
     return NextResponse.json({ message: "Blog Updated" }, { status: 200 });
 }
 
-export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
-    try {
-        const id = params.id;
-        await connectMongoDB();
+// export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
+//     try {
+//         const id = params.id;
+//         await connectMongoDB();
 
-        // ✅ 检查 id 是否为有效的 ObjectId
-        if (!mongoose.Types.ObjectId.isValid(id)) {
-            return NextResponse.json({ error: "Invalid blog ID" }, { status: 400 });
-        }
+//         if (!mongoose.Types.ObjectId.isValid(id)) {
+//             return NextResponse.json({ error: "Invalid blog ID" }, { status: 400 });
+//         }
 
-        const blog = await Blog.findById(id);
+//         const blog = await Blog.findById(id);
 
-        if (!blog) {
-            return NextResponse.json({ error: "Blog not found" }, { status: 404 });
-        }
+//         if (!blog) {
+//             return NextResponse.json({ error: "Blog not found" }, { status: 404 });
+//         }
 
-        return NextResponse.json(blog, { status: 200 });
-    } catch (error) {
-        console.error("Error fetching blog:", error);
-        return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
-    }
-}
+//         return NextResponse.json(blog, { status: 200 });
+//     } catch (error) {
+//         console.error("Error fetching blog:", error);
+//         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
+//     }
+// }

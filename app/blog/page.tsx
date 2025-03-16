@@ -13,7 +13,7 @@ import Pagination from '@/app/components/pagination/Pagination';
 const PER_PAGE = 4;
 
 
-const BlogPage = async ({ searchParams }: { searchParams: { tag?: string, page?: string } }) => {
+const BlogPage = async ({ searchParams }: { searchParams: Promise<{ tag?: string, page?: string }> }) => {
     const params = await searchParams;
     const tag = params.tag ?? "";
     const currentPage = params?.page ? parseInt(params.page, 10) : 1;
