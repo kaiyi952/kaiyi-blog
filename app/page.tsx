@@ -107,11 +107,9 @@ function Page() {
       </div >
       <div id='section5' className=" flex flex-col-reverse items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-10 sm:mb-10 mb-10" data-aos="fade-up">
         <ul className={`${styles.article} sm:ml-[200px] mt-8 mx-8 sm:ml-18 ml-12 sm:w-[50vw] sm:mt-8 sm:max-w-[700px]`}>
-          <li><b>Languages: </b> JavaScript, TypeScript, HTML, CSS, Python, C#</li>
-          <li><b>Frameworks & Libraries: </b> React, Next.js, Blazor, Tailwind CSS</li>
-          <li><b>Databases: </b> MySQL, Prisma</li>
-          <li><b>Tools & Platforms: </b> Figma, Git, Jest, Mocha, Vercel</li>
-          <li><b>Others: </b> REST APIs, Responsive Design, Graphic Design</li>
+          <a href="http://xhslink.com/a/pyMzEIm07o27" target="_blank"><b>Skateboarding: </b> Click to see my skateboarding video</a>
+          <li><b>Calligraphy: </b> Dedicated tons of time for over ten years since youth.</li>
+          <li><b>Hiphop: </b> Work in progress, it&apos;s a bug not a feature for now.</li>
         </ul>
         <p className={`${styles.subHeader} sm:mt-12 sm:mr-[7%] xl:mr-[15%] mt-8`}>trivia</p>
       </div>
