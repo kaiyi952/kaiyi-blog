@@ -5,6 +5,8 @@ import { BiPencil } from "react-icons/bi";
 import React, { FC } from "react";
 import { SignedIn } from "@clerk/nextjs";
 import { FaRegTrashCan } from "react-icons/fa6";
+import { useAuth } from "@clerk/nextjs";
+
 
 export interface ArticleActionButtonsProps {
     id: string;
@@ -13,14 +15,24 @@ export interface ArticleActionButtonsProps {
 
 const ArticleActionButtons: FC<ArticleActionButtonsProps> = ({ id }) => {
     const router = useRouter();
+    const { userId } = useAuth();
+
 
     const handleEdit: React.MouseEventHandler<HTMLButtonElement> = (e) => {
+        if (!userId) {
+            alert("You must be logged in to edit.");
+            return;
+        }
         e.preventDefault();
         e.stopPropagation();
         router.replace(`/editblog/${id}`)
     }
 
     const removeBlog: React.MouseEventHandler<HTMLButtonElement> = async (e) => {
+        if (!userId) {
+            alert("You must be logged in to delete.");
+            return;
+        }
         e.preventDefault();
         e.stopPropagation();
 

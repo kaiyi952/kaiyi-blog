@@ -2,6 +2,7 @@ import Blog from "@/app/model/Blog";
 import BlogTag from "@/app/model/BlogTag";
 import connectMongoDB from "@/libs/mongodb";
 import { NextResponse, NextRequest } from "next/server";
+import { auth } from '@clerk/nextjs/server'
 
 interface CreatePostRequest {
     title: string,
@@ -11,6 +12,10 @@ interface CreatePostRequest {
 }
 
 export async function POST(req: NextRequest) {
+    const { userId } = await auth()
+    if (!userId) {
+        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
     const { title, content, description, tags } = (await req.json()) as CreatePostRequest;
     await connectMongoDB();
     const blog = new Blog({ title, content, description, tags });

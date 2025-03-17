@@ -1,8 +1,13 @@
 import Blog from "@/app/model/Blog";
 import connectMongoDB from "@/libs/mongodb";
 import { NextRequest, NextResponse } from "next/server";
+import { auth } from '@clerk/nextjs/server'
 
 export async function DELETE(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+    const { userId } = await auth()
+    if (!userId) {
+        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
     const id = (await params).id
     await connectMongoDB();
     await Blog.findByIdAndDelete(id)
@@ -10,6 +15,10 @@ export async function DELETE(req: NextRequest, { params }: { params: Promise<{ i
 }
 
 export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+    const { userId } = await auth()
+    if (!userId) {
+        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
     const id = (await params).id
     const { newTitle: title, newContent: content, newDescription: description, newTags: tags } = await req.json();
     await connectMongoDB();
