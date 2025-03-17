@@ -77,12 +77,13 @@ const ArticlePage = async ({ params }: { params: Promise<{ id: string }> }) => {
     });
 
     return (
-        <div className={`${styles.main} grid justify-center w-full my-8`}>
-            <div className="grid grid-rows-[auto_1fr] gap-4 w-full max-w-3xl">
+        <div className={`${styles.main} grid justify-center w-full my-2`}>
+            <div className="grid grid-rows-[auto_1fr] gap-3 w-full max-w-3xl">
                 <h1 className="text-center text-3xl font-bold">
                     {frontmatter?.title || blog?.title || "Untitled"}
                 </h1>
-                <div className={`prose prose-a:text-blue-500 w-full mx-8 ${styles.main}`}>
+                <h2 className={styles.date}>updated at: {new Date(blog.createdAt).toLocaleDateString()}</h2>
+                <div className={`prose prose-a:text-blue-500 w-full  ${styles.main}`}>
                     {content}
                 </div>
             </div>

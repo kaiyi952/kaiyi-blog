@@ -35,7 +35,7 @@ function Page() {
             <FaInstagram className="inline-block" />
           </a>&nbsp;
           <a href="https://bsky.app/profile/kaiyiho.bsky.social" className={styles.bsky}>
-            <img src='bsky.svg' className="inline-block w-[17px] mb-[2px] ml-[2px]" />
+            <img src='bsky.svg' className="inline-block w-[12px] mb-[2px] ml-[2px] md:w-[17px]" />
           </a>
         </p>
 
@@ -58,7 +58,7 @@ function Page() {
         />
       </div>
       <div id='section3' className="flex flex-col-reverse items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-0" data-aos="fade-up">
-        <figure className="flex-none w-[400] sm:ml-10 sm:w-[500] mt-2 xl:ml-14"><embed src="https://wakatime.com/share/@564d6b19-0a9d-4877-9727-cf8496a1b184/a4228140-47ba-4953-8c53-08d1877666c0.svg"></embed></figure>
+        <figure className="flex-none w-[300] sm:ml-10 sm:w-[400] mt-2 xl:ml-14"><embed src="https://wakatime.com/share/@564d6b19-0a9d-4877-9727-cf8496a1b184/a4228140-47ba-4953-8c53-08d1877666c0.svg"></embed></figure>
         <ul className={`${styles.article} mt-8 mx-8 sm:ml-18 ml-12 sm:w-[50vw] sm:mt-10 sm:max-w-[700px]`}>
           <li><b>Languages: </b> JavaScript, TypeScript, HTML, CSS, Python, C#</li>
           <li><b>Frameworks & Libraries: </b> React, Next.js, Blazor, Tailwind CSS</li>
@@ -72,7 +72,7 @@ function Page() {
         <p className={`${styles.subHeader} sm:mt-6 ml-18 sm:ml-20 mt-8`}>projects</p>
         <section className={`${styles.article} ml-12 mt-8 mx-8 sm:ml-20  xl:ml-20 sm:mt-6 sm:max-w-[800px]`}>
           <div className="flex justify-between sm:w-4/5">
-            <a className="font-bold hover:text-slate-500" href="https://next-js-home-away.vercel.app/">
+            <a className="font-bold hover:text-slate-500" href="https://github.com/kaiyi952/home-away">
               Home Away Website
             </a>
             <p>May 2024 – Sep 2024</p>
@@ -87,8 +87,10 @@ function Page() {
           Built a reusable component library and implemented OAuth2.0 login using Clerk.
           <br />
           <br />
-          <div className="flex justify-between w-4/5">
-            <h1 className="font-bold">Student Registration Web Application</h1>
+          <div className="flex justify-between sm:w-4/5">
+            <a className="font-bold hover:text-slate-500" href="https://github.com/kaiyi952/Registrar">
+              Student Registration Web Application
+            </a>
             <p> May 2024 – Sep 2024</p>
           </div>
 

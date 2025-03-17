@@ -15,7 +15,7 @@
   font-family: "Recursive", serif;
   //  font-family: "Noto Sans Mono", serif;
   font-variation-settings: "CASL" 0,"MONO" .8;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 550;
   font-style: normal;
   color: #2733f5;
@@ -46,4 +46,11 @@
 
 .allPosts:hover{
 transform: scale(1.2);
+}
+
+
+@media screen and (max-width: 780px) {
+  .article {
+      font-size: 0.7rem;
+  }
 }

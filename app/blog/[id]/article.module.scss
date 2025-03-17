@@ -4,3 +4,15 @@
   color: #2733f5;
 }
 
+.date {
+  color: #54534d;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width:780px){
+.main{
+  width: 100%;
+  padding: 5px 20px;
+}
+}

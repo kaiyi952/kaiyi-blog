@@ -75,7 +75,7 @@ function Nav() {
   }
 
   return (
-    <div className={`flex justify-between py-4 px-8 items-center ${styles.handWritten} z-50`}>
+    <div className={`flex justify-between py-4 px-8 items-center ${styles.handWritten} z-50 `}>
       <div className='flex items-center'>
         <Link href="/" style={{ color: '#2733f5' }} ref={leftElemRef}>KAI952</Link>
         <Image
@@ -90,7 +90,7 @@ function Nav() {
         />
       </div>
       <div>
-        <Link href={`/blog`} style={{ color: '#2733f5' }} className='mr-6 md:mr-2' ref={rightElemRef}>blog</Link>
+        <Link href={`/blog`} style={{ color: '#2733f5' }} className='mr-2 md:mr-6' ref={rightElemRef}>blog</Link>
         <SignedOut>
           <SignInButton mode='modal' >
             <button style={{ color: '#2733f5' }}>Log in</button>
