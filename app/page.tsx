@@ -58,7 +58,7 @@ function Page() {
         />
       </div>
       <div id='section3' className="flex flex-col-reverse items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-0" data-aos="fade-up">
-        <figure className="flex-none w-[400px] sm:ml-10 sm:w-[500px] mt-2 xl:ml-14"><embed src="https://wakatime.com/share/@564d6b19-0a9d-4877-9727-cf8496a1b184/a4228140-47ba-4953-8c53-08d1877666c0.svg"></embed></figure>
+        <figure className="flex-none w-[320px] sm:ml-10 sm:w-[500px] mt-2 xl:ml-14"><embed src="https://wakatime.com/share/@564d6b19-0a9d-4877-9727-cf8496a1b184/a4228140-47ba-4953-8c53-08d1877666c0.svg"></embed></figure>
         <ul className={`${styles.article} mt-8 mx-8 sm:ml-18 ml-12 sm:w-[50vw] sm:mt-10 sm:max-w-[700px]`}>
           <li><b>Languages: </b> JavaScript, TypeScript, HTML, CSS, Python, C#</li>
           <li><b>Frameworks & Libraries: </b> React, Next.js, Blazor, Tailwind CSS</li>
