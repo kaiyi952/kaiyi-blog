@@ -5,6 +5,7 @@ import styles from "./form.module.scss"
 import TagControler from '../../components/tagcontroler/TagControler';
 import Editor from '@/app/createblog/Editor';
 import { useRouter } from 'next/navigation';
+import { useAuth } from '@clerk/nextjs';
 
 export interface BlogDetail {
     id: string;
@@ -21,6 +22,13 @@ function EditBlog({ id, title, description, tags, content }: BlogDetail) {
     const [newDescription, setDescription] = useState(description)
     const [newArticle, setArticle] = useState<string>(content);
     const route = useRouter();
+    const { userId, isLoaded } = useAuth();
+    useEffect(() => {
+        if (isLoaded && !userId) {
+            route.replace("https://accounts.kaiyi.io/sign-in");
+        }
+    }, [userId, isLoaded, route]);
+
 
     useEffect(() => {
         fetch("/api/tags")
@@ -54,7 +62,7 @@ function EditBlog({ id, title, description, tags, content }: BlogDetail) {
             }
             console.log("Blog saved successfully!");
         } catch (error) {
-            console.error("Error saving blog:", error);
+            alert(`Error saving blog:,${error}`);
         }
     };
 
