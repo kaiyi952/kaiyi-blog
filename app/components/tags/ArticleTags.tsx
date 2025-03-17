@@ -19,7 +19,7 @@ const ArticleTags: FC<ArticleTagsProps> = ({ activeTag, tags }) => {
             {tags.map((tag) => (
                 <Link
                     key={tag}
-                    className={`${styles.article} ml-6 md:inline-block ${activeTag === tag ? styles.articleActive : ""}`} style={{ color: '#2733f5' }}
+                    className={`${styles.article} ml-4 md:inline-block ${activeTag === tag ? styles.articleActive : ""}`} style={{ color: '#2733f5' }}
                     href={`/blog?tag=${tag}`}
                 >
                     {tag}

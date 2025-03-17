@@ -6,6 +6,7 @@ import TagControler from '../components/tagcontroler/TagControler';
 import Editor from './Editor';
 import { useRouter } from 'next/navigation';
 import matter from 'gray-matter';
+import { useAuth } from '@clerk/nextjs';
 
 function CreateBlog() {
 
@@ -23,6 +24,12 @@ function CreateBlog() {
   const [newTag, setNewTag] = useState<string>("");
   const [article, setArticle] = useState<string>("");
   const route = useRouter();
+  const { userId, isLoaded } = useAuth();
+  useEffect(() => {
+    if (isLoaded && !userId) {
+      route.replace("https://accounts.kaiyi.io/sign-in");
+    }
+  }, [userId, isLoaded, route]);
 
   const saveArticle = async () => {
     try {

@@ -6,7 +6,8 @@ function Footer() {
     <div className={styles.main}>
       <div className={styles.divider}>---End---</div>
       <div className={styles.footerSlogan}>應無所住，而生其心</div>
-      <div className={styles.footerText}><span>&copy; 2025 Kaiyi under </span><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" className='underline'>CC BY-SA 4.0</a>
+      <div className={styles.footerText}>
+        <div className={styles.license}><span>&copy; 2025 Kaiyi under </span><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" className='underline'>CC BY-SA 4.0</a></div>
         <span className={styles.footerIcons}>
           <a href="https://github.com/kaiyi952" target="_blank" className='sm:ml-[40px] '>
             <FaGithub className="inline-block" />

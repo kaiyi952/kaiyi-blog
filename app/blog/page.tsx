@@ -50,7 +50,7 @@ const BlogPage = async ({ searchParams }: { searchParams: Promise<{ tag?: string
                             </SignedIn>
                         </div>
                     </div>
-                    <div className="mt-0 mx-8 sm:w-[50vw] sm:mt-6 sm:max-w-[700px] h-auto" data-aos="fade-in">
+                    <div className="mt-0 mx-8 sm:w-[50vw] sm:mt-6 sm:max-w-[700px] h-auto sm:min-h-[275px]" data-aos="fade-in">
                         <BlogList blogs={blogs} />
                     </div>
                     <Pagination currentPage={currentPage} totalPages={totalPages} tag={tag} />
