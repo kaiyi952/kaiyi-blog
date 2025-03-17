@@ -64,7 +64,7 @@ function Page() {
           <li><b>Frameworks & Libraries: </b> React, Next.js, Blazor, Tailwind CSS</li>
           <li><b>Databases: </b> MySQL, Prisma, MongoDB</li>
           <li><b>Tools & Platforms: </b> Figma, Git, Jest, Mocha, Vercel</li>
-          <li><b>Others: </b> REST APIs, Responsive Design, Graphic Design</li>
+          <li><b>Others: </b> RESTful APIs, Responsive Design, Graphic Design</li>
         </ul>
         <p className={`${styles.subHeader} sm:mt-12 sm:mr-[7%] xl:mr-[15%] mt-8`}>tech</p>
       </div>
