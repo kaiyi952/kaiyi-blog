@@ -1,8 +1,9 @@
 import React, { FC } from 'react'
+import styles from './blog-list.module.scss'
 
 const EmptyList: FC = () => {
     return (
-        <div>Nothing there...</div>
+        <div className={styles.title}>Nothing there...</div>
     )
 }
 

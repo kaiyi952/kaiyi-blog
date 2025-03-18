@@ -8,6 +8,7 @@ import BlogList from '../components/List/BlogList';
 import ArticleTags from '../components/tags/ArticleTags';
 import BlogTag from '../model/BlogTag';
 import Pagination from '@/app/components/pagination/Pagination';
+import EmptyList from '../components/List/EmptyList';
 
 
 const PER_PAGE = 4;
@@ -29,7 +30,7 @@ const BlogPage = async ({ searchParams }: { searchParams: Promise<{ tag?: string
     const blogs = allBlogs.sort((a, b) => b.createdAt - a.createdAt)
         .slice(PER_PAGE * (currentPage - 1), PER_PAGE * currentPage);
     const totalPages = Math.ceil(allBlogs.length / PER_PAGE);
-
+    console.log(allBlogs)
 
     return (
         <div className={`${styles.main}`}>
@@ -50,8 +51,8 @@ const BlogPage = async ({ searchParams }: { searchParams: Promise<{ tag?: string
                             </SignedIn>
                         </div>
                     </div>
-                    <div className="mt-0 mx-8 sm:w-[50vw] sm:mt-6 sm:max-w-[700px] h-auto sm:min-h-[275px]" data-aos="fade-in">
-                        <BlogList blogs={blogs} />
+                    <div className="mt-0 mx-8 sm:w-[50vw] sm:mt-6 sm:max-w-[700px] h-auto min-h-[275px] " data-aos="fade-in">
+                        {allBlogs.length == 0 ? <EmptyList /> : <BlogList blogs={blogs} />}
                     </div>
                     <Pagination currentPage={currentPage} totalPages={totalPages} tag={tag} />
                 </div>

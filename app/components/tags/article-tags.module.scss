@@ -1,4 +1,7 @@
 .article {
+  display: flex;
+  align-items: center;
+  gap: 1px;
   // font-family: "Caveat Brush", serif;
   font-family: "Recursive", serif;
   //  font-family: "Noto Sans Mono", serif;
@@ -35,6 +38,10 @@ transform: scale(1.1);
 
 @media screen and (max-width: 480px) {
   .article {
-      font-size: 1rem;
+      font-size: 0.9rem;
+      gap: 0px;
+  }
+  .articleActive {
+     font-size: 0.9rem;
   }
 }
