@@ -30,7 +30,6 @@ const BlogPage = async ({ searchParams }: { searchParams: Promise<{ tag?: string
     const blogs = allBlogs.sort((a, b) => b.createdAt - a.createdAt)
         .slice(PER_PAGE * (currentPage - 1), PER_PAGE * currentPage);
     const totalPages = Math.ceil(allBlogs.length / PER_PAGE);
-    console.log(allBlogs)
 
     return (
         <div className={`${styles.main}`}>

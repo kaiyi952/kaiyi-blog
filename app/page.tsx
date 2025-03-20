@@ -1,20 +1,24 @@
+"use client";
 import styles from "./home.module.scss";
 import React from 'react'
 import Image from "next/image";
 import SideNav from "./components/navbar/SideNav";
-import { FaInstagram, FaGithub, FaEnvelope } from 'react-icons/fa6';
+import { FaInstagram, FaGithub, FaEnvelope, FaHandPointRight, FaRightLong } from 'react-icons/fa6';
 import Link from "next/link";
 
 function Page() {
   return (
     <>
-      <div id="section1" className="inline-block">
+      {/*home*/}
+      <div id="home" className="inline-block">
         <p className={`${styles.header} text-center text-[130px] sm:text-[200px] sm:ml-10 ml-5 w-fit -z-10 relative leading-[0.8em]`}>
           <span>Kaiyi&apos;s Home</span>
           <img className="absolute -z-10 top-0 object-contain w-[80%]" src="/title-bg1.png" />
         </p>
       </div>
-      <div id="section2" className="flex flex-col items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-9 sm:" data-aos="fade-in">
+
+      {/*about*/}
+      <div id="about" className="flex flex-col items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-9 sm:" data-aos="fade-in">
         <p className={`${styles.subHeader} sm:mt-20 ml-18 sm:ml-20 mt-8`}>about me</p>
         <p className={`${styles.article} ml-12 mt-8 mx-8 sm:ml-8 sm:w-[50vw] sm:mt-20 sm:max-w-[700px]`}>
           Hello world! My name is Kaiyi<br />
@@ -23,7 +27,7 @@ function Page() {
           I&apos;m always curious and open to new ideas, seeking opportunities to collaborate with others, share knowledge, and explore innovative approaches. My goal is to not only improve my own skills but also contribute to a community of like-minded individuals.<br />
           Let&apos;s connect and create something impactful together!
           <br />
-          <a href="https://github.com/kaiyi952" >
+          <a href="https://github.com/kaiyi952" target="_blank"  >
             <FaGithub className="inline-block" />
           </a>
           &nbsp;
@@ -31,10 +35,10 @@ function Page() {
             <FaEnvelope className="inline-block" />
           </a>
           &nbsp;
-          <a href="https://www.instagram.com/kaiyi_7/profilecard/?igsh=ZDI4M2J3aW1vdzQ1" >
+          <a href="https://www.instagram.com/kaiyi_7/profilecard/?igsh=ZDI4M2J3aW1vdzQ1" target="_blank" >
             <FaInstagram className="inline-block" />
           </a>&nbsp;
-          <a href="https://bsky.app/profile/kaiyiho.bsky.social" className={styles.bsky}>
+          <a href="https://bsky.app/profile/kaiyiho.bsky.social" className={styles.bsky} target="_blank" >
             <img src='bsky.svg' className="inline-block w-[12px] mb-[2px] ml-[2px] md:w-[17px]" />
           </a>
         </p>
@@ -57,7 +61,9 @@ function Page() {
           className="my-0 hidden md:inline-block sm:mt-8"
         />
       </div>
-      <div id='section3' className="flex flex-col-reverse items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-0" data-aos="fade-up">
+
+      {/*tech*/}
+      <div id='tech' className="flex flex-col-reverse items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-0" data-aos="fade-up">
         <figure className="flex-none w-[320px] sm:ml-10 sm:w-[500px] mt-2 xl:ml-14"><embed src="https://wakatime.com/share/@564d6b19-0a9d-4877-9727-cf8496a1b184/a4228140-47ba-4953-8c53-08d1877666c0.svg"></embed></figure>
         <ul className={`${styles.article} mt-8 mx-8 sm:ml-18 ml-12 sm:w-[50vw] sm:mt-10 sm:max-w-[700px]`}>
           <li><b>Languages: </b> JavaScript, TypeScript, HTML, CSS, Python, C#</li>
@@ -68,52 +74,92 @@ function Page() {
         </ul>
         <p className={`${styles.subHeader} sm:mt-12 sm:mr-[7%] xl:mr-[15%] mt-8`}>tech</p>
       </div>
-      <div id='section4' className="flex flex-col items-center w-screen sm:items-start sm:flex-row sm:justify-start md:mt-9" data-aos="fade-up">
-        <p className={`${styles.subHeader} sm:mt-6 ml-18 sm:ml-20 mt-8`}>projects</p>
+
+      {/*experience*/}
+      <div id='experience' className="flex flex-col items-center w-screen sm:items-start sm:flex-row sm:justify-start md:mt-9" data-aos="fade-up">
+        <p className={`${styles.subHeader} sm:mt-6 ml-18 sm:ml-20 mt-8`}>experience</p>
         <section className={`${styles.article} ml-12 mt-8 mx-8 sm:ml-20  xl:ml-20 sm:mt-6 sm:max-w-[800px]`}>
-          <div className="flex justify-between sm:w-4/5">
-            <a className="font-bold hover:text-slate-500" href="https://github.com/kaiyi952/home-away">
-              Home Away Website
+          <div className="flex justify-between sm:w-full">
+            <b>Software Engineer Intern, Remote</b>
+            <p>United States</p>
+          </div>
+          <div className="flex justify-between sm:w-full">
+            <p> Popcorn AI Tech Inc.</p>
+            <p>Jan 2025 - Present</p>
+          </div>
+          React, TypeScript, Jotai, Signal, SCSS, Shadcn<br />
+          - Assist in developing user interfaces using React.js and related libraries.
+          <br />
+          - Participate in building reusable components and front-end architecture
+          <br />
+          - Work on integrating RESTful APIs and using Axios into React application.
+          <br />
+          - Implemented global state management with Jotai, improving code maintainability and developer experience.
+          <br />
+          - Implemented real-time data updates using WebSocket, ensuring seamless live interactions.
+        </section>
+      </div >
+
+      {/*projects*/}
+      <div id='projects' className="flex flex-col-reverse items-center w-[100%] sm:items-start sm:flex-row sm:justify-between md:mt-9 sm:px-[100px] sm:mr-[100px]" data-aos="fade-up">
+        <section className={`${styles.article} ml-12 mt-8 mx-8 sm:ml-20   sm:mt-6 sm:max-w-[800px]`}>
+          <div className="flex justify-between sm:w-full">
+            <a className="font-bold hover:text-slate-500" href="https://www.kaiyi.io/">
+              <b>Blog Website (Yep, you&apos;re here!)</b>
             </a>
-            <p>May 2024 – Sep 2024</p>
+            <p>Jan 2025 - </p>
+          </div>
+          React, TypeScript, Jotai, Signal, SCSS, Shadcn <br />
+          - Developed my own full-stack blog websites, integrating a CMS for content management to continuously create, update, and display my blog posts.
+          <br />
+          <Link href="/blog/679ec5c6f5a0575a3c94ed5d" className="flex items-center gap-2 font-bold underline decoration-2 hover:decoration-transparent"><FaHandPointRight /> Click here to see how it was built!</Link>
+          <br />
+          <div className="flex justify-between sm:w-full">
+            <a className="font-bold hover:text-slate-500" href="https://github.com/kaiyi952/home-away">
+              <b>Home Away Website</b>
+            </a>
+            <p>May 2024 - Sep 2024</p>
           </div>
           Next.js, TypeScript, Tailwind CSS, Prisma ORM, PostgreSQL, Vercel <br />
           Developed A full-stack web application for vacation rental services.
           <br />
-          Created user, property, and order features with Prisma ORM for efficient data handling.
+          - Created user, property, and order features with Prisma ORM for efficient data handling.
           <br />
-          Achieved 60% unit test coverage with Jest and automated CI/CD deployment via GitHub Actions to Vercel.
+          - Achieved 60% unit test coverage with Jest and automated CI/CD deployment via GitHub Actions to Vercel.
           <br />
-          Built a reusable component library and implemented OAuth2.0 login using Clerk.
+          - Built a reusable component library and implemented OAuth2.0 login using Clerk.
           <br />
           <br />
-          <div className="flex justify-between sm:w-4/5">
+          <div className="flex justify-between sm:w-full">
             <a className="font-bold hover:text-slate-500" href="https://github.com/kaiyi952/Registrar">
-              Student Registration Web Application
+              <b>Student Registration Web Application</b>
             </a>
-            <p> May 2024 – Sep 2024</p>
+            <p> May 2024 - Sep 2024</p>
           </div>
 
           C#, .NET, Blazor, Dapper, MySQL
           <br />
           Developed a database-driven student registration app using C#, Blazor, and Dapper with a MySQL database.
           <br />
-          Built dynamic UI components for real-time student, course, and registration management.
+          - Built dynamic UI components for real-time student, course, and registration management.
           <br />
-          Implemented unified validation, error handling, and modular architecture for scalability.
+          - Implemented unified validation, error handling, and modular architecture for scalability.
           <br />
-          Conducted smoke tests to ensure functionality under diverse scenarios.
+          - Conducted smoke tests to ensure functionality under diverse scenarios.
         </section>
+        <p className={`${styles.subHeader} sm:mt-6 ml-18 sm:mr-[250px] mt-8 `}>projects</p>
       </div >
-      <div id='section5' className=" flex flex-col-reverse items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-10 sm:mb-10 mb-10" data-aos="fade-up">
-        <ul className={`${styles.article} sm:ml-[200px] mt-8 mx-8 sm:ml-18 ml-12 sm:w-[50vw] sm:mt-8 sm:max-w-[700px]`}>
+
+      {/*trivia*/}
+      <div id='trivia' className=" flex flex-col-reverse items-center w-screen sm:items-start sm:flex-row-reverse sm:justify-end md:mt-10 sm:mb-10 mb-10 sm:px-[180px]" data-aos="fade-up">
+        <ul className={`${styles.article} sm:ml-[7%] mt-8 mx-8  ml-12 sm:w-[50vw] sm:mt-8 sm:max-w-[700px]`}>
           <a href="http://xhslink.com/a/pyMzEIm07o27" target="_blank"><b>Skateboarding: </b> Click to see my skateboarding video</a>
           <li><b>Calligraphy: </b> Dedicated tons of time for over ten years since youth.</li>
           <li><b>Hiphop: </b> Work in progress, it&apos;s a bug not a feature for now.</li>
         </ul>
-        <p className={`${styles.subHeader} sm:mt-12 sm:mr-[7%] xl:mr-[15%] mt-8`}>trivia</p>
+        <p className={`${styles.subHeader} sm:mt-12  mt-8`}>trivia</p>
       </div>
-      <div><Link href='/blog' className={styles.allPosts} >All Blogs -&gt;</Link></div>
+      <div><Link href='/blog' className={styles.allPosts} >All Blogs<FaRightLong /></Link></div>
       <SideNav />
     </>
   )

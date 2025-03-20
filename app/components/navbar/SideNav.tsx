@@ -29,25 +29,17 @@ const SideNav = () => {
         }
     };
 
-
-    // const scrollToSection = (id: string) => {
-    //     const element = document.getElementById(id);
-    //     if (element) {
-    //         element.scrollIntoView({ behavior: "smooth" });
-    //     } else {
-    //         console.log(`没有找到 id 为 ${id} 的元素`);
-    //     }
-    // };
     return (
         <div className={`fixed top-20 right-8 h-full text-[#2733f5] z-100 w-50 ${styles.sidebar} hidden md:inline-block`}>
-            <div className="flex flex-col items-center space-y-4 py-10">
+            <div className="flex flex-col items-center space-y-4 py-6">
                 {/* <h2 className="text-2xl font-bold">Kai Portfolio</h2> */}
 
-                <button data-goto="section1" onClick={onBtnClick} className=" p-2  text-center transform transition-all duration-300 hover:scale-110 active:scale-95">home</button>
-                <button data-goto="section2" onClick={onBtnClick} className=" p-2  text-center transform transition-all duration-300 hover:scale-110 active:scale-95">about</button>
-                <button data-goto="section3" onClick={onBtnClick} className=" p-2  text-center transform transition-all duration-300 hover:scale-110 active:scale-95">tech</button>
-                <button data-goto="section4" onClick={onBtnClick} className=" p-2  text-center transform transition-all duration-300 hover:scale-110 active:scale-95">projects</button>
-                <button data-goto="section5" onClick={onBtnClick} className=" p-2  text-center transform transition-all duration-300 hover:scale-110 active:scale-95">trivia</button>
+                <button data-goto="home" onClick={onBtnClick} className=" p-2  text-center transform transition-all duration-300 hover:scale-110 active:scale-95">home</button>
+                <button data-goto="about" onClick={onBtnClick} className=" p-2  text-center transform transition-all duration-300 hover:scale-110 active:scale-95">about</button>
+                <button data-goto="tech" onClick={onBtnClick} className=" p-2  text-center transform transition-all duration-300 hover:scale-110 active:scale-95">tech</button>
+                <button data-goto="experience" onClick={onBtnClick} className=" p-2  text-center transform transition-all duration-300 hover:scale-110 active:scale-95">experience</button>
+                <button data-goto="projects" onClick={onBtnClick} className=" p-2  text-center transform transition-all duration-300 hover:scale-110 active:scale-95">projects</button>
+                <button data-goto="trivia" onClick={onBtnClick} className=" p-2  text-center transform transition-all duration-300 hover:scale-110 active:scale-95">trivia</button>
             </div>
         </div >
     );
