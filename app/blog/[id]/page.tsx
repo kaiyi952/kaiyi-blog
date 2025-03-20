@@ -6,6 +6,8 @@ import remarkGfm from "remark-gfm";
 import mongoose from "mongoose";
 import styles from "./article.module.scss";
 import { codeToHtml } from "shiki";
+import Link from "next/link";
+import { FaRegHandPointLeft } from "react-icons/fa6";
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
@@ -77,8 +79,9 @@ const ArticlePage = async ({ params }: { params: Promise<{ id: string }> }) => {
     });
 
     return (
-        <div className={`${styles.main} flex justify-center w-full my-2`}>
+        <div className={`${styles.main} flex justify-center w-full mb-2`}>
             <div className="flex flex-col items-center gap-3 w-full max-w-3xl">
+                <Link href='/blog' className="w-full pl-4 font-bold flex items-center gap-2"><FaRegHandPointLeft />Back to lists</Link>
                 <h1 className="text-center text-3xl font-bold">
                     {frontmatter?.title || blog?.title || "Untitled"}
                 </h1>

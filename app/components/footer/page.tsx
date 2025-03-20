@@ -1,11 +1,14 @@
+'use client'
 import React from 'react'
 import styles from './footer.module.scss';
 import { FaInstagram, FaGithub, FaEnvelope } from 'react-icons/fa6';
+import Sparkles from '../sparkle/Sparkles';
 function Footer() {
   return (
     <div className={styles.main}>
       <div className={styles.divider}>---End---</div>
-      <div className={styles.footerSlogan}>應無所住，而生其心</div>
+      <div className={styles.footerSlogan}><Sparkles>應無所住，而生其心</Sparkles></div>
+      <div className={styles.footerSlogan}><Sparkles>Let the mind arise.</Sparkles></div>
       <div className={styles.footerText}>
         <div className={styles.license}><span>&copy; 2025 Kaiyi under </span><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" className='underline'>CC BY-SA 4.0</a></div>
         <span className={styles.footerIcons}>

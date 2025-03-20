@@ -5,6 +5,7 @@ import Image from "next/image";
 import SideNav from "./components/navbar/SideNav";
 import { FaInstagram, FaGithub, FaEnvelope, FaHandPointRight, FaRightLong } from 'react-icons/fa6';
 import Link from "next/link";
+import Sparkles from "./components/sparkle/Sparkles";
 
 function Page() {
   return (
@@ -12,7 +13,7 @@ function Page() {
       {/*home*/}
       <div id="home" className="inline-block">
         <p className={`${styles.header} text-center text-[130px] sm:text-[200px] sm:ml-10 ml-5 w-fit -z-10 relative leading-[0.8em]`}>
-          <span>Kaiyi&apos;s Home</span>
+          <span><Sparkles>Kaiyi</Sparkles> &apos;s Home</span>
           <img className="absolute -z-10 top-0 object-contain w-[80%]" src="/title-bg1.png" />
         </p>
       </div>
@@ -21,7 +22,7 @@ function Page() {
       <div id="about" className="flex flex-col items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-9 sm:" data-aos="fade-in">
         <p className={`${styles.subHeader} sm:mt-20 ml-18 sm:ml-20 mt-8`}>about me</p>
         <p className={`${styles.article} ml-12 mt-8 mx-8 sm:ml-8 sm:w-[50vw] sm:mt-20 sm:max-w-[700px]`}>
-          Hello world! My name is Kaiyi<br />
+          Hello world! My name is <Sparkles>Kaiyi</Sparkles> <br />
           Used to be a student in English Literature<br />
           Now I&apos;m a passionate web developer and designer, dedicated to crafting seamless, user-friendly applications that blend functionality with aesthetic appeal.<br />
           I&apos;m always curious and open to new ideas, seeking opportunities to collaborate with others, share knowledge, and explore innovative approaches. My goal is to not only improve my own skills but also contribute to a community of like-minded individuals.<br />
@@ -68,7 +69,7 @@ function Page() {
         <ul className={`${styles.article} mt-8 mx-8 sm:ml-18 ml-12 sm:w-[50vw] sm:mt-10 sm:max-w-[700px]`}>
           <li><b>Languages: </b> JavaScript, TypeScript, HTML, CSS, Python, C#</li>
           <li><b>Frameworks & Libraries: </b> React, Next.js, Blazor, Tailwind CSS</li>
-          <li><b>Databases: </b> MySQL, Prisma, MongoDB</li>
+          <li><b>Databases: </b> MySQL, PostgreSQL, Prisma, MongoDB</li>
           <li><b>Tools & Platforms: </b> Figma, Git, Jest, Mocha, Vercel</li>
           <li><b>Others: </b> RESTful APIs, Responsive Design, Graphic Design</li>
         </ul>
@@ -105,9 +106,9 @@ function Page() {
         <section className={`${styles.article} ml-12 mt-8 mx-8 sm:ml-20   sm:mt-6 sm:max-w-[800px]`}>
           <div className="flex justify-between sm:w-full">
             <a className="font-bold hover:text-slate-500" href="https://www.kaiyi.io/">
-              <b>Blog Website (Yep, you&apos;re here!)</b>
+              <b><Sparkles><b> Blog Website</b></Sparkles> (Yep, you&apos;re here!)</b>
             </a>
-            <p>Jan 2025 - </p>
+            <p>Jan 2025 - Present</p>
           </div>
           React, TypeScript, Jotai, Signal, SCSS, Shadcn <br />
           - Developed my own full-stack blog websites, integrating a CMS for content management to continuously create, update, and display my blog posts.
@@ -153,7 +154,7 @@ function Page() {
       {/*trivia*/}
       <div id='trivia' className=" flex flex-col-reverse items-center w-screen sm:items-start sm:flex-row-reverse sm:justify-end md:mt-10 sm:mb-10 mb-10 sm:px-[180px]" data-aos="fade-up">
         <ul className={`${styles.article} sm:ml-[7%] mt-8 mx-8  ml-12 sm:w-[50vw] sm:mt-8 sm:max-w-[700px]`}>
-          <a href="http://xhslink.com/a/pyMzEIm07o27" target="_blank"><b>Skateboarding: </b> Click to see my skateboarding video</a>
+          <a href="http://xhslink.com/a/pyMzEIm07o27" target="_blank"><Sparkles><b>Skateboarding: </b> </Sparkles> Click to see my skateboarding video</a>
           <li><b>Calligraphy: </b> Dedicated tons of time for over ten years since youth.</li>
           <li><b>Hiphop: </b> Work in progress, it&apos;s a bug not a feature for now.</li>
         </ul>

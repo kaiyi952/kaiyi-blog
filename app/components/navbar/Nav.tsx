@@ -86,7 +86,7 @@ function Nav() {
           width={60}
           height={60}
           alt="Picture of the author"
-          className='ml-2'
+          className='ml-2 w-12 sm:w-16'
         />
       </div>
       <div>
