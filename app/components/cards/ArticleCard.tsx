@@ -11,7 +11,7 @@ const ArticleCard: FC<{ blog: BlogEntry }> = (props) => {
             <Link href={`/blog/${id}`} key={id} >
                 <div className='flex flex-col  justify-between mb-4 max-w-[700px] '>
                     <div className='flex justify-between'>
-                        <div className={styles.title}><span className={styles.arrow}>&gt;</span> <span className='underline'>{title}</span>   </div>
+                        <div className={styles.title}><span className={styles.arrow}>&gt;</span> <span className={styles.underline}>{title}</span>   </div>
                         <div className='flex items-start gap-2'>
                             <p className={`${styles.date}`}>{new Date(createdAt).toLocaleDateString()}</p>
                             <ArticleActionButtons id={id} />

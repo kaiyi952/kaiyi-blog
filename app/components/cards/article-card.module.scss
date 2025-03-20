@@ -3,9 +3,7 @@
 }
 
 .title {
-  // font-family: "Caveat Brush", serif;
   font-family: "Recursive", serif;
-  //  font-family: "Noto Sans Mono", serif;
   font-variation-settings: "CASL" 0,"MONO" .1;
   font-size: 1.125rem;
   font-weight: 700;
@@ -24,12 +22,10 @@
   color: #2733f5;
   line-height: 1.5em;
   transform: scale(1.05); 
-
 }
 
 .date{
   font-family: "Recursive", serif;
-  //  font-family: "Noto Sans Mono", serif;
   font-variation-settings: "CASL" 0,"MONO" .5;
   font-size: 1.125rem;
   font-weight: 700;
@@ -40,7 +36,6 @@
 
 .description {
     font-family: "Recursive", serif;
-  //  font-family: "Noto Sans Mono", serif;
   font-variation-settings: "CASL" 0,"MONO" .3;
   font-size: 1rem;
   font-weight: 500;
@@ -64,4 +59,19 @@
   .description{
     font-size: 0.8rem;
   }
+}
+
+.underline {
+  background: 
+    linear-gradient(to right, #f3c85d, #f3c85d),
+    linear-gradient(to right, #2733f5,#2733f5,#2733f5);
+  background-size: 100% 0.1em, 0 0.1em;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+.underline:hover,
+.underline:focus {
+  background-size: 0 0.1em, 100% 0.1em;
 }

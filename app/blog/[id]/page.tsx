@@ -85,7 +85,7 @@ const ArticlePage = async ({ params }: { params: Promise<{ id: string }> }) => {
                 <h1 className="text-center text-3xl font-bold">
                     {frontmatter?.title || blog?.title || "Untitled"}
                 </h1>
-                <h2 className={styles.date}>updated on: {new Date(blog.createdAt).toLocaleDateString()}</h2>
+                <h2 className={styles.date}>created on: {new Date(blog.createdAt).toLocaleDateString()}</h2>
                 <div className={`prose prose-a:text-blue-500 w-full  ${styles.main} `}>
                     {content}
                 </div>

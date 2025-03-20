@@ -34,7 +34,7 @@ const BlogPage = async ({ searchParams }: { searchParams: Promise<{ tag?: string
     return (
         <div className={`${styles.main}`}>
             <div className="inline-block">
-                <p className={`${styles.header} text-center text-[130px] sm:text-[200px] sm:ml-10 ml-5 w-fit -z-10 relative leading-[0.8em] select-none`}>
+                <p className={`${styles.header} text-center text-[120px] sm:text-[180px] sm:ml-10 ml-5 w-fit -z-10 relative leading-[0.8em] select-none`}>
                     <span>Kaiyi&apos;s Blog</span>
                     <img className="absolute -z-20 top-0 object-contain w-[80%]" src="/title-bg1.png" />
                 </p>

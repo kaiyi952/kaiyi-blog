@@ -26,14 +26,15 @@
 }
 
 .articleActive {
-   font-family: "Recursive", serif;
-   font-variation-settings: "CASL" 1,"MONO" .5;
+  font-family: "Recursive", serif;
+  font-variation-settings: "CASL" 1,"MONO" .5;
   font-size: 1.125rem;
   font-weight: 800;
   font-style: normal;
   color: #2733f5;
   line-height: 1.5em;
-transform: scale(1.1); 
+  transform: scale(1.1); 
+  text-decoration: 2px #FFC700 underline;
 }
 
 @media screen and (max-width: 480px) {
