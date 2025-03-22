@@ -7,6 +7,7 @@ import {
 } from '@clerk/nextjs'
 import InitAOS from "./components/InitAOS/InitAOS";
 import Footer from "./components/footer/page";
+import { Analytics } from '@vercel/analytics/next';
 
 
 const geistSans = Geist({
@@ -40,6 +41,7 @@ export default function RootLayout({
           <Nav />
           <InitAOS />
           {children}
+          <Analytics />
           <Footer />
         </body>
       </html>
