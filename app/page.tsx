@@ -42,6 +42,7 @@ function Page() {
           <a href="https://bsky.app/profile/kaiyiho.bsky.social" className={styles.bsky} target="_blank" >
             <img src='bsky.svg' className="inline-block w-[12px] mb-[2px] ml-[2px] md:w-[17px]" />
           </a>
+          <p><Link href='/blog' className={styles.allPosts} >All Blogs<FaRightLong /></Link></p>
         </p>
 
         <Image

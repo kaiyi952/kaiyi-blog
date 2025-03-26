@@ -98,15 +98,17 @@ function CreateBlog() {
             />
           </div>
           {/* Tags input */}
-          <div className='w-full z-50'>
+          <div className='w-full '>
             <label htmlFor="article" className={`block  font-medium mb-2 ${styles.label}`}>
               Tags
             </label>
             <div className='flex'>
-              <TagControler tags={tags} onChange={(selected) => setSelectedTags(selected)} selectedTags={selectedTags} />
+              <div className='z-50'>
+                <TagControler tags={tags} onChange={(selected) => setSelectedTags(selected)} selectedTags={selectedTags} />
+              </div>
               <input
                 type="text"
-                className="w-[50%] border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none mx-4"
+                className="w-[50%] border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none mx-4 "
                 placeholder="Add new tag"
                 value={newTag}
                 onChange={(e) => setNewTag(e.target.value)}

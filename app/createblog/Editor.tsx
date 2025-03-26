@@ -4,8 +4,12 @@ import React from 'react';
 import {
     BlockTypeSelect,
     BoldItalicUnderlineToggles,
+    diffSourcePlugin,
+    DiffSourceToggleWrapper,
     frontmatterPlugin,
+    imagePlugin,
     InsertCodeBlock,
+    InsertFrontmatter,
     InsertImage,
     InsertTable,
     UndoRedo
@@ -37,6 +41,13 @@ const Editor = ({
             onChange={onChange}
             markdown={value}
             plugins={[
+                imagePlugin({
+                    imageUploadHandler: () => {
+                        return Promise.resolve('https://picsum.photos/200/300')
+                    },
+                    imageAutocompleteSuggestions: ['https://picsum.photos/200/300', 'https://picsum.photos/200']
+                }),
+                diffSourcePlugin({ diffMarkdown: 'An older version', viewMode: 'rich-text' }),
                 frontmatterPlugin(),
                 codeBlockPlugin({ defaultCodeBlockLanguage: 'ts' }),
                 codeMirrorPlugin({ codeBlockLanguages: { js: 'JavaScript', css: 'CSS', ts: 'TypeScript' } }),
@@ -55,6 +66,10 @@ const Editor = ({
                             <BlockTypeSelect />
                             <InsertCodeBlock />
                             <InsertTable />
+                            <DiffSourceToggleWrapper>
+                                <UndoRedo />
+                            </DiffSourceToggleWrapper>
+                            <InsertFrontmatter />
                         </>
                     )
                 })
