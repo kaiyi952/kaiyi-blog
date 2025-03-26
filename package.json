@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.775.0",
     "@clerk/nextjs": "^6.9.6",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
@@ -26,6 +27,7 @@
     "@wooorm/starry-night": "^3.6.0",
     "animejs": "^3.2.2",
     "aos": "^2.3.4",
+    "dotenv": "^16.4.7",
     "echarts": "^5.5.1",
     "echarts-for-react": "^3.0.2",
     "gray-matter": "^4.0.3",

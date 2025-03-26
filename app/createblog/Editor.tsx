@@ -16,6 +16,8 @@ import {
 } from '@mdxeditor/editor';
 import '@mdxeditor/editor/style.css';
 import styles from "./createBlog.module.scss";
+import { uploadImage } from '../api/uploads/route';
+
 
 const {
     MDXEditor,
@@ -34,7 +36,15 @@ const Editor = ({
     onChange,
     value
 }: { onChange: (md: string) => void, value: string }) => {
-
+    const handleImageUpload = async (file: File): Promise<string> => {
+        try {
+            const imageUrl = await uploadImage(file);
+            return imageUrl;
+        } catch (error) {
+            console.error("Image upload failed", error);
+            throw new Error("Image upload failed");
+        }
+    };
     return (
         <MDXEditor
             contentEditableClassName={styles.editor}
@@ -42,9 +52,7 @@ const Editor = ({
             markdown={value}
             plugins={[
                 imagePlugin({
-                    imageUploadHandler: () => {
-                        return Promise.resolve('https://picsum.photos/200/300')
-                    },
+                    imageUploadHandler: handleImageUpload,
                     imageAutocompleteSuggestions: ['https://picsum.photos/200/300', 'https://picsum.photos/200']
                 }),
                 diffSourcePlugin({ diffMarkdown: 'An older version', viewMode: 'rich-text' }),
