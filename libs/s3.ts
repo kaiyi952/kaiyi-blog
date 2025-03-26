@@ -1,5 +1,6 @@
 import { S3Client } from "@aws-sdk/client-s3";
 export const S3endpoint = "https://assets.kaiyi.io"
+console.log(process.env.R2_ACCESS_KEY_ID)
 const s3Client = new S3Client({
   region: "auto",
   endpoint: S3endpoint,

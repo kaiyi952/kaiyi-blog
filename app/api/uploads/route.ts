@@ -1,9 +1,13 @@
 import s3Client, { S3endpoint } from "@/libs/s3";
 import { PutObjectCommand } from "@aws-sdk/client-s3";
 import { NextResponse } from "next/server";
-
+import { auth } from '@clerk/nextjs/server'
 
 export async function POST(req: Request) {
+  const { userId } = await auth()
+  if (!userId) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
   try {
     const formData = await req.formData();
     const file = formData.get("file") as File | null;
