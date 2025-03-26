@@ -1,25 +1,8 @@
-import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
+import s3Client, { S3endpoint } from "@/libs/s3";
+import { PutObjectCommand } from "@aws-sdk/client-s3";
 import { NextResponse } from "next/server";
 
-const R2_ACCESS_KEY_ID = process.env.R2_ACCESS_KEY_ID;
-const R2_SECRET_ACCESS_KEY = process.env.R2_SECRET_ACCESS_KEY;
-const domain = "https://assets.kaiyi.io";
 
-if (!R2_ACCESS_KEY_ID || !R2_SECRET_ACCESS_KEY) {
-  throw new Error("Missing AWS access keys in environment variables.");
-}
-
-const s3Client = new S3Client({
-  region: "auto",
-  endpoint: domain,
-  credentials: {
-    accessKeyId: R2_ACCESS_KEY_ID,
-    secretAccessKey: R2_SECRET_ACCESS_KEY,
-  },
-  forcePathStyle: true,
-});
-
-// ✅ 正确的 Next.js API Route 处理函数
 export async function POST(req: Request) {
   try {
     const formData = await req.formData();
@@ -41,7 +24,7 @@ export async function POST(req: Request) {
     });
 
     await s3Client.send(command);
-    return NextResponse.json({ url: `${domain}/${fileName}` }, { status: 200 });
+    return NextResponse.json({ url: `${S3endpoint}/${fileName}` }, { status: 200 });
   } catch (error) {
     console.error("Image upload failed:", error);
     return NextResponse.json({ error: "Image upload failed" }, { status: 500 });
