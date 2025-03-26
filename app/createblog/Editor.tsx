@@ -16,9 +16,6 @@ import {
 } from '@mdxeditor/editor';
 import '@mdxeditor/editor/style.css';
 import styles from "./createBlog.module.scss";
-import { uploadImage } from '../api/uploads/route';
-
-
 const {
     MDXEditor,
     codeBlockPlugin,
@@ -38,8 +35,18 @@ const Editor = ({
 }: { onChange: (md: string) => void, value: string }) => {
     const handleImageUpload = async (file: File): Promise<string> => {
         try {
-            const imageUrl = await uploadImage(file);
-            return imageUrl;
+            const formData = new FormData();
+            formData.append("file", file);
+
+            const res = await fetch("/api/uploads", {
+                method: "POST",
+                body: formData
+            });
+
+            if (!res.ok) throw new Error("Image upload failed");
+
+            const data = await res.json();
+            return data.url;
         } catch (error) {
             console.error("Image upload failed", error);
             throw new Error("Image upload failed");
