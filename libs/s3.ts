@@ -1,5 +1,5 @@
 import { S3Client } from "@aws-sdk/client-s3";
-export const S3endpoint = "https://assets.kaiyi.io"
+export const S3endpoint = "https://f244d7415c54cb1aea1c88bf3e414fe0.r2.cloudflarestorage.com/blog-images"
 console.log(process.env.R2_ACCESS_KEY_ID)
 const s3Client = new S3Client({
   region: "auto",

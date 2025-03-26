@@ -1,13 +1,8 @@
-import s3Client, { S3endpoint } from "@/libs/s3";
+import s3Client from "@/libs/s3";
 import { PutObjectCommand } from "@aws-sdk/client-s3";
-import { NextResponse } from "next/server";
-import { auth } from '@clerk/nextjs/server'
-
-export async function POST(req: Request) {
-  const { userId } = await auth()
-  if (!userId) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+import { NextRequest, NextResponse } from "next/server";
+const customDomain = "https://assets.kaiyi.io"
+export async function POST(req: NextRequest) {
   try {
     const formData = await req.formData();
     const file = formData.get("file") as File | null;
@@ -28,7 +23,7 @@ export async function POST(req: Request) {
     });
 
     await s3Client.send(command);
-    return NextResponse.json({ url: `${S3endpoint}/${fileName}` }, { status: 200 });
+    return NextResponse.json({ url: `${customDomain}/${fileName}` }, { status: 200 });
   } catch (error) {
     console.error("Image upload failed:", error);
     return NextResponse.json({ error: "Image upload failed" }, { status: 500 });
