@@ -1,7 +1,7 @@
 import s3Client from "@/libs/s3";
 import { PutObjectCommand } from "@aws-sdk/client-s3";
 import { NextRequest, NextResponse } from "next/server";
-const customDomain = "https://assets.kaiyi.io"
+const customDomain = "https://assets.kaiyi.io/blog-images"
 export async function POST(req: NextRequest) {
   try {
     const formData = await req.formData();
