@@ -6,25 +6,33 @@ import SideNav from "./components/navbar/SideNav";
 import { FaInstagram, FaGithub, FaEnvelope, FaHandPointRight, FaRightLong } from 'react-icons/fa6';
 import Link from "next/link";
 import Sparkles from "./components/sparkle/Sparkles";
+import TrueFocus from "./components/focus/TrueFocus";
 
 function Page() {
   return (
     <>
       {/*home*/}
       <div id="home" className="inline-block">
-        <p className={`${styles.header} text-center text-[120px] sm:text-[180px] sm:ml-10 ml-5 w-fit -z-10 relative leading-[0.8em]`}>
-          <span><Sparkles>Kaiyi</Sparkles> &apos;s Home</span>
+        <div className={`${styles.header} text-center text-[120px] sm:text-[180px] sm:ml-10 ml-5 w-fit -z-10 relative leading-[0.8em]`}>
+          <p><Sparkles>Kaiyi</Sparkles> &apos;s Home</p>
           <img className="absolute -z-10 top-0 object-contain w-[80%]" src="/title-bg1.png" />
-        </p>
+        </div>
       </div>
 
       {/*about*/}
       <div id="about" className="flex flex-col items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-9 sm:" data-aos="fade-in">
         <p className={`${styles.subHeader} sm:mt-20 ml-18 sm:ml-20 mt-8`}>about me</p>
-        <p className={`${styles.article} ml-12 mt-8 mx-8 sm:ml-8 sm:w-[50vw] sm:mt-20 sm:max-w-[700px]`}>
+        <div className={`${styles.article} ml-12 mt-8 mx-8 sm:ml-8 sm:w-[50vw] sm:mt-20 sm:max-w-[700px]`}>
           Hello world! My name is <Sparkles>Kaiyi</Sparkles> <br />
           Used to be a student in English Literature<br />
-          Now I&apos;m a passionate web developer and designer, dedicated to crafting seamless, user-friendly applications that blend functionality with aesthetic appeal.<br />
+          Now I&apos;m a passionate Web <p className="inline-block"><TrueFocus
+            sentence="Develoepr, Designer"
+            manualMode={false}
+            blurAmount={2}
+            borderColor="#f8d378"
+            animationDuration={2}
+            pauseBetweenAnimations={1}
+          /></p>.I dedicate to crafting seamless, user-friendly applications that blend functionality with aesthetic appeal.<br />
           I&apos;m always curious and open to new ideas, seeking opportunities to collaborate with others, share knowledge, and explore innovative approaches. My goal is to not only improve my own skills but also contribute to a community of like-minded individuals.<br />
           Let&apos;s connect and create something impactful together!
           <br />
@@ -43,7 +51,7 @@ function Page() {
             <img src='bsky.svg' className="inline-block w-[12px] mb-[2px] ml-[2px] md:w-[17px]" />
           </a>
           <p><Link href='/blog' className={styles.allPosts} >All Blogs<FaRightLong /></Link></p>
-        </p>
+        </div>
 
         <Image
           src="/kaiyi.png"
@@ -168,3 +176,4 @@ function Page() {
 }
 
 export default Page
+
