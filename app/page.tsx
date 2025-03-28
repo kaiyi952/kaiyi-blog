@@ -30,7 +30,7 @@ function Page() {
             manualMode={false}
             blurAmount={2}
             borderColor="#f8d378"
-            animationDuration={2}
+            animationDuration={1}
             pauseBetweenAnimations={1}
           /></p>.I dedicate to crafting seamless, user-friendly applications that blend functionality with aesthetic appeal.<br />
           I&apos;m always curious and open to new ideas, seeking opportunities to collaborate with others, share knowledge, and explore innovative approaches. My goal is to not only improve my own skills but also contribute to a community of like-minded individuals.<br />
