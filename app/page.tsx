@@ -117,7 +117,7 @@ function Page() {
           <Link href="/blog/679ec5c6f5a0575a3c94ed5d" className="flex items-center gap-2 font-bold underline decoration-2 hover:decoration-transparent"><FaHandPointRight /> Click here to see how it was built!</Link>
           <br />
           <div className="flex justify-between sm:w-full">
-            <a className="font-bold hover:text-slate-500" href="https://github.com/kaiyi952/home-away">
+            <a className="font-bold hover:text-slate-500" href="https://next-js-home-away.vercel.app/" target="_blank">
               <b>Home Away Website</b>
             </a>
             <p>May 2024 - Sep 2024</p>
@@ -133,7 +133,7 @@ function Page() {
           <br />
           <br />
           <div className="flex justify-between sm:w-full">
-            <a className="font-bold hover:text-slate-500" href="https://github.com/kaiyi952/Registrar">
+            <a className="font-bold hover:text-slate-500" href="https://github.com/kaiyi952/Registrar" target="_blank">
               <b>Student Registration Web Application</b>
             </a>
             <p> May 2024 - Sep 2024</p>
