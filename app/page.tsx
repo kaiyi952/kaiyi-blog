@@ -7,6 +7,7 @@ import { FaInstagram, FaGithub, FaEnvelope, FaHandPointRight, FaRightLong } from
 import Link from "next/link";
 import Sparkles from "./components/sparkle/Sparkles";
 import TrueFocus from "./components/focus/TrueFocus";
+import { TypeAnimation } from 'react-type-animation';
 
 function Page() {
   return (
@@ -26,7 +27,8 @@ function Page() {
           Hello world! My name is <Sparkles>Kaiyi</Sparkles> <br />
           Used to be a student in English Literature<br />
           Now I&apos;m a passionate Web <p className="inline-block"><TrueFocus
-            sentence="Develoepr, Designer"
+            sentence="Develoepr and Designer"
+            skippedWord="and"
             manualMode={false}
             blurAmount={2}
             borderColor="#f8d378"
@@ -34,7 +36,14 @@ function Page() {
             pauseBetweenAnimations={1}
           /></p>.I dedicate to crafting seamless, user-friendly applications that blend functionality with aesthetic appeal.<br />
           I&apos;m always curious and open to new ideas, seeking opportunities to collaborate with others, share knowledge, and explore innovative approaches. My goal is to not only improve my own skills but also contribute to a community of like-minded individuals.<br />
-          Let&apos;s connect and create something impactful together!
+          <TypeAnimation
+            sequence={[
+              "Let's connect and create something impactful together!",
+            ]}
+            speed={50}
+            className={`${styles.article}`}
+            repeat={1}
+          />
           <br />
           <a href="https://github.com/kaiyi952" target="_blank"  >
             <FaGithub className="inline-block" />
