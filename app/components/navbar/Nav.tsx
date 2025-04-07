@@ -93,13 +93,13 @@ function Nav() {
         <Link href={`/blog?tag=tech`} style={{ color: '#2733f5' }} className='mr-2 md:mr-6' ref={rightElemRef}>blog</Link>
         <SignedOut>
           <SignInButton mode='modal' >
-            <button style={{ color: '#2733f5' }}>Log in</button>
+            <button style={{ color: '#2733f5' }}>Login</button>
           </SignInButton>
         </SignedOut>
         <SignedIn>
           <SignOutButton redirectUrl='/'>
             <button style={{ color: '#2733f5' }}>
-              Log out
+              Logout
             </button>
           </SignOutButton>
         </SignedIn>
