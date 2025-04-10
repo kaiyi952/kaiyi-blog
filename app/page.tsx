@@ -129,7 +129,7 @@ function Page() {
             <p>Jan 2025 - Present</p>
           </div>
           React, TypeScript, Jotai, Signal, SCSS, Shadcn <br />
-          - Developed my own full-stack blog websites, integrating a CMS for content management to continuously create, update, and display my blog posts.
+          - Developed my own full-stack blog website, integrating a CMS for content management to continuously create, update, and display my blog posts.
           <br />
           <Link href="/blog/679ec5c6f5a0575a3c94ed5d" className="flex items-center gap-2 font-bold underline decoration-2 hover:decoration-transparent"><FaHandPointRight /> Click here to see how it was built!</Link>
           <br />
