@@ -11,6 +11,7 @@ import {
   SignedOut,
   SignOutButton
 } from '@clerk/nextjs'
+import SubscribeModal from '../Form/SubscribeModal';
 
 function Nav() {
   const animeController = useRef<AnimeInstance | null>(null);
@@ -20,6 +21,7 @@ function Nav() {
   const rightElemRef = useRef<HTMLAnchorElement>(null);
   const bounds = useRef({ l: 0, r: 0, distance: 0, selfWidth: 0 });
   const [left, setLeft] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   function updateBounds() {
     if (!leftElemRef.current || !rightElemRef.current) return;
@@ -73,7 +75,12 @@ function Nav() {
     console.log(animeController.current.direction);
     animeController.current.play();
   }
-
+  function handleModalOpen() {
+    setIsModalOpen(true)
+  }
+  function handleModalClose() {
+    setIsModalOpen(false)
+  }
   return (
     <div className={`flex justify-between py-4 px-8 items-center ${styles.handWritten} z-50 `}>
       <div className='flex items-center'>
@@ -90,8 +97,8 @@ function Nav() {
         />
       </div>
       <div>
-        <Link href={`/blog?tag=tech`} style={{ color: '#2733f5' }} className='mr-2 md:mr-6' ref={rightElemRef}>subscribe</Link>
-        <Link href={`/blog?tag=tech`} style={{ color: '#2733f5' }} className='mr-2 md:mr-6' ref={rightElemRef}>blog</Link>
+        <span ref={rightElemRef}> <button style={{ color: '#2733f5' }} className='mr-2 md:mr-6' onClick={handleModalOpen}>subscribe</button></span>
+        <Link href={`/blog?tag=tech`} style={{ color: '#2733f5' }} className='mr-2 md:mr-6'>blog</Link>
         <SignedOut>
           <SignInButton mode='modal' >
             <button style={{ color: '#2733f5' }}>Login</button>
@@ -105,7 +112,7 @@ function Nav() {
           </SignOutButton>
         </SignedIn>
       </div>
-
+      <SubscribeModal isOpen={isModalOpen} onClose={handleModalClose} />
     </div>
   )
 }

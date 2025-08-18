@@ -21,11 +21,55 @@ font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 100%;
-  box-sizing: border-box; /* 防止宽度问题 */
+  box-sizing: border-box; 
   height: 200px;
   overflow-y: scroll;
 }
 
 .editor:focus {
     border: 1px solid #2733f5 ;
+}
+
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.modal {
+   background-color: #ead091;;
+}
+
+.button{
+  font-family: "Caveat Brush", serif;
+  font-weight: 800;
+  font-size: 40px;
+  font-style: normal;
+   color: #2733f5;
+}
+
+.button:hover{
+transform: scale(1.2);
+}
+
+
+.rejectButton{
+   font-family: "Caveat Brush", serif;
+  font-weight: 800;
+  font-size: 25px;
+  font-style: normal;
+   color: #3c3f75;
+   align-self: ceter;
+   align-items: center;
+}
+.rejectButton:hover{
+transform: scale(1.1);
 }
