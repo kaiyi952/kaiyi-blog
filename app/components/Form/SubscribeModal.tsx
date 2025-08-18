@@ -1,7 +1,6 @@
 'use client'
 import React from 'react'
 import styles from './form.module.scss'
-import { FaRegHandPointLeft } from 'react-icons/fa6';
 interface SubscribeModalProps {
   isOpen: boolean;
   onClose: () => void;
