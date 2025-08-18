@@ -90,6 +90,7 @@ function Nav() {
         />
       </div>
       <div>
+        <Link href={`/blog?tag=tech`} style={{ color: '#2733f5' }} className='mr-2 md:mr-6' ref={rightElemRef}>subscribe</Link>
         <Link href={`/blog?tag=tech`} style={{ color: '#2733f5' }} className='mr-2 md:mr-6' ref={rightElemRef}>blog</Link>
         <SignedOut>
           <SignInButton mode='modal' >
