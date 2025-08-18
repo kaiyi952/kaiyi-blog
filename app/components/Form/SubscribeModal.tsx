@@ -34,7 +34,7 @@ function SubscribeModal({ isOpen, onClose }: SubscribeModalProps) {
             <span>:)</span>
           </button>
         </div>
-        <button className={`${styles.rejectButton} flex justify-center w-full`}>No thank you...</button>
+        <button className={`${styles.rejectButton} flex justify-center w-full`} onClick={onClose}>No thank you...</button>
       </div>
     </div>
   )
