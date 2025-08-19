@@ -94,27 +94,49 @@ function Page() {
 
       {/*experience*/}
       <div id='experience' className="flex flex-col items-center w-screen sm:items-start sm:flex-row sm:justify-start md:mt-9" data-aos="fade-up">
-        <p className={`${styles.subHeader} sm:mt-6 ml-18 sm:ml-20 mt-8`}>experience</p>
-        <section className={`${styles.article} ml-12 mt-8 mx-8 sm:ml-20  xl:ml-20 sm:mt-6 sm:max-w-[800px]`}>
-          <div className="flex justify-between sm:w-full">
-            <b>Software Engineer Intern, Remote</b>
-            <p>United States</p>
-          </div>
-          <div className="flex justify-between sm:w-full">
-            <p> Popcorn AI Tech Inc.</p>
-            <p>Jan 2025 - Present</p>
-          </div>
-          React, TypeScript, Jotai, Signal, SCSS, Shadcn<br />
-          - Assist in developing user interfaces using React.js and related libraries.
-          <br />
-          - Participate in building reusable components and front-end architecture
-          <br />
-          - Work on integrating RESTful APIs and using Axios into React application.
-          <br />
-          - Implemented global state management with Jotai, improving code maintainability and developer experience.
-          <br />
-          - Implemented real-time data updates using WebSocket, ensuring seamless live interactions.
-        </section>
+        <p className={`${styles.subHeader} sm:mt-6 ml-26 sm:ml-20 mt-8`}>experience</p>
+        <div className="flex flex-col items-center ">
+          <section className={`${styles.article} ml-12 mt-8 mx-8 sm:ml-20  xl:ml-20 sm:mt-6 sm:max-w-[800px]`}>
+            <div className="flex justify-between sm:w-full">
+              <b>Frontend Developer, Remote</b>
+              <p>United States</p>
+            </div>
+            <div className="flex justify-between sm:w-full">
+              <p> Hyperknow</p>
+              <p>Apr 2025 - Present</p>
+            </div>
+            React, Node.js, TypeScript, Shadcn UI, Babel, Webpack, Tailwind CSS,  LLM integration<br />
+            - Implemented AI-assisted note generation using React.js and contextual Q&A features by integrating LLMs.
+            <br />
+            - Collaborated with product managers, designers, and backend engineers through Jira to streamline agile workflows, delivering 15+ React components with 98% on-time completion.
+            <br />
+            - Built and maintained a modular component system using React and Shadcn UI, improving UI consistency.
+            <br />
+            - Integrated a rich-text editing experience using Tiptap, enabling advanced content formatting, image embedding, and custom extension support for enhanced user input.
+            <br />
+            - Optimized performance by implementing atom design and reducing duplicated API calls by 30%.
+          </section>
+          <section className={`${styles.article} ml-12 mt-8 mx-8 sm:ml-20  xl:ml-20 sm:mt-6 sm:max-w-[800px]`}>
+            <div className="flex justify-between sm:w-full">
+              <b>Software Engineer Intern, Remote</b>
+              <p>United States</p>
+            </div>
+            <div className="flex justify-between sm:w-full">
+              <p> Ditto AI</p>
+              <p>Jan 2025 - Aug 2025</p>
+            </div>
+            React, TypeScript, Jotai, Signal, SCSS, Shadcn, Jest<br />
+            - Assist in developing user interfaces using React.js and related libraries.
+            <br />
+            - Participate in building reusable components and front-end architecture
+            <br />
+            - Work on integrating RESTful APIs and using Axios into React application.
+            <br />
+            - Implemented global state management with Jotai, improving code maintainability and developer experience.
+            <br />
+            - Implemented real-time data updates using WebSocket, ensuring seamless live interactions.
+          </section>
+        </div>
       </div >
 
       {/*projects*/}
