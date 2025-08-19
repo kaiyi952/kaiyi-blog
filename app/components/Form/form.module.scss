@@ -73,3 +73,40 @@ transform: scale(1.2);
 .rejectButton:hover{
 transform: scale(1.1);
 }
+
+
+@media screen and (max-width: 780px) {
+  .handWritten {
+      font-weight: 600;
+      font-size: 22px;
+  }
+
+  .button{
+  font-family: "Caveat Brush", serif;
+  font-weight: 600;
+  font-size: 20px;
+  font-style: normal;
+   color: #2733f5;
+   align-self: center;
+}
+
+.button:hover{
+transform: scale(1.2);
+}
+
+
+.rejectButton{
+   font-family: "Caveat Brush", serif;
+  font-weight: 600;
+  font-size: 18px;
+  font-style: normal;
+   color: #3c3f75;
+   align-self: ceter;
+   align-items: center;
+}
+.rejectButton:hover{
+transform: scale(1.1);
+}
+
+
+}
