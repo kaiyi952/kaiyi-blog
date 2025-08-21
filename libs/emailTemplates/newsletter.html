@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaiyi.io 博客更新</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Recursive:wght@300..1000&display=swap');
+  </style>
+  <style>
+    body {
+      font-family: "Recursive", serif;
+      font-variation-settings: "CASL" 0, "MONO" .8;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      background-color: #2733f5;
+      color: white;
+      padding: 30px;
+      text-align: center;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 36px;
+      font-weight: 600;
+    }
+
+    .content {
+      padding: 30px;
+    }
+
+    .blog-post {
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+
+    }
+
+    .blog-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1f2937;
+      margin-bottom: 10px;
+    }
+
+    .blog-excerpt {
+      color: #6b7280;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .read-more {
+      background-color: #2733f5;
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      display: inline-block;
+    }
+
+    .footer {
+      background-color: #f8f9fa;
+      padding: 20px 30px;
+      text-align: center;
+      border-radius: 0 0 8px 8px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .footer p {
+      margin: 5px 0;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    .unsubscribe {
+      margin-top: 15px;
+      font-size: 12px;
+    }
+
+    .unsubscribe a {
+      color: #6b7280;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Kaiyi's Newsletter</h1>
+    </div>
+
+    <div class="content">
+      <p>Heyy! Check out my latest blog post:</p>
+
+      <div class="blog-post">
+        <h2 class="blog-title">{{blog_title}}</h2>
+        <p class="blog-excerpt">{{blog_excerpt}}</p>
+        <a href="{{blog_url}}" class="read-more">Read More</a>
+      </div>
+
+      <p>Hope this article is helpful!</p>
+    </div>
+
+    <div class="footer">
+      <p>From Kaiyi.io</p>
+      <p>Thank you for subscribing!</p>
+      <div class="unsubscribe">
+        <a href="{{unsubscribe_url}}">Unsubscribe</a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
