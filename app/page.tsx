@@ -103,7 +103,7 @@ function Page() {
             </div>
             <div className="flex justify-between sm:w-full">
               <p> Hyperknow</p>
-              <p>Apr 2025 - Present</p>
+              <p>Apr 2025 - Aug 2025</p>
             </div>
             React, Node.js, TypeScript, Shadcn UI, Babel, Webpack, Tailwind CSS,  LLM integration<br />
             - Implemented AI-assisted note generation using React.js and contextual Q&A features by integrating LLMs.
