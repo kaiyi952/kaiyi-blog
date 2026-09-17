@@ -36,7 +36,7 @@
     "gray-matter": "^4.0.3",
     "mongoose": "^8.9.2",
     "next": "15.1.10",
-    "next-mdx-remote": "^5.0.0",
+    "next-mdx-remote": "^6.0.0",
     "pinyin": "^4.0.0-alpha.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
