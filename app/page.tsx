@@ -98,14 +98,38 @@ function Page() {
         <div className="flex flex-col items-center ">
           <section className={`${styles.article} ml-12 mt-8 mx-8 sm:ml-20  xl:ml-20 sm:mt-6 sm:max-w-[800px]`}>
             <div className="flex justify-between sm:w-full">
+              <b>Web Developer (Full Stack)</b>
+              <p>Toronto</p>
+            </div>
+            <div className="flex justify-between sm:w-full">
+              <p>Cheil @ Samsung Canada</p>
+              <p>Feb 2026 - Present</p>
+            </div>
+            React, Flask, Ubuntu, GCP, Vertex AI, Claude, Docker, Cloudflare, AEM
+            <br />
+            - Developed AI Studio agentic AI workflow on Gemini that generates and automates Samsung creative—AI backgrounds, on-brand copy, video treatments from existing product photography across multi-channel specs, accelerating campaign asset turnaround by ~60%.
+            <br />
+            - Developed a CRM campaign system that turns design into production-ready email HTML within ~10 minutes (~10× faster), automating layout, responsive markup, and preview packaging versus the prior design-to-code handoff.
+            <br />
+            - Build and customize AEM components for Samsung campaigns, product launches, and promotional pages.
+            <br />
+            - Develop and maintain web experiences for Samsung Canada using HTML, CSS, JavaScript, and Adobe Experience Manager (AEM).
+            <br />
+            - TrueNorthTunes: Full-stack national music competition platform partnered with Samsung Canada built on Cloudflare Workers, R2, and D1; took over end-to-end development and maintenance of a platform with 10,000+ monthly visitors.
+            <br />
+            - Owned production hosting for internal AI tools on Linux servers—Dockerized services, network/firewall and LAN access configuration, environment secrets management, and end-to-end full-stack deployment and uptime operations.
+          </section>
+          <section className={`${styles.article} ml-12 mt-8 mx-8 sm:ml-20  xl:ml-20 sm:mt-6 sm:max-w-[800px]`}>
+            <div className="flex justify-between sm:w-full">
               <b>Frontend Developer, Remote</b>
               <p>United States</p>
             </div>
             <div className="flex justify-between sm:w-full">
-              <p> Hyperknow</p>
+              <p>Hyperknow</p>
               <p>Apr 2025 - Aug 2025</p>
             </div>
-            React, Node.js, TypeScript, Shadcn UI, Babel, Webpack, Tailwind CSS,  LLM integration<br />
+            React, Node.js, TypeScript, Shadcn UI, Babel, Webpack, Tailwind CSS, LLM integration
+            <br />
             - Implemented AI-assisted note generation using React.js and contextual Q&A features by integrating LLMs.
             <br />
             - Collaborated with product managers, designers, and backend engineers through Jira to streamline agile workflows, delivering 15+ React components with 98% on-time completion.
@@ -122,13 +146,14 @@ function Page() {
               <p>United States</p>
             </div>
             <div className="flex justify-between sm:w-full">
-              <p> Ditto AI</p>
+              <p>Ditto AI</p>
               <p>Jan 2025 - Aug 2025</p>
             </div>
-            React, TypeScript, Jotai, Signal, SCSS, Shadcn, Jest<br />
+            React, TypeScript, Jotai, Signal, SCSS, Shadcn, Jest
+            <br />
             - Assist in developing user interfaces using React.js and related libraries.
             <br />
-            - Participate in building reusable components and front-end architecture
+            - Participate in building reusable components and front-end architecture.
             <br />
             - Work on integrating RESTful APIs and using Axios into React application.
             <br />
