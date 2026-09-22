@@ -24,8 +24,8 @@ function Page() {
       <div id="about" className="flex flex-col items-center w-screen sm:items-start sm:flex-row sm:justify-between md:mt-9 sm:" data-aos="fade-in">
         <p className={`${styles.subHeader} sm:mt-20 ml-18 sm:ml-20 mt-8`}>about me</p>
         <div className={`${styles.article} ml-12 mt-8 mx-8 sm:ml-8 sm:w-[50vw] sm:mt-20 sm:max-w-[700px]`}>
-          Hello world! My name is <Sparkles>Kaiyi</Sparkles>. I&apos;m a passionate Web <p className="inline-block"><TrueFocus
-            sentence="Develoepr and Designer"
+          Hello world! My name is <Sparkles>Kaiyi</Sparkles>. I&apos;m a passionate <p className="inline-block"><TrueFocus
+            sentence="Software Engineer and AI Developer"
             skippedWord="and"
             manualMode={false}
             blurAmount={2}
